@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 
 import App from './components/App';
 import Landing from './components/Landing/Landing';
@@ -15,14 +15,18 @@ import './index.css';
 
 ReactDOM.render(
     <Router>
-        <Switch>
-        <Route exact path='/' component={App} />
-        <Route path='/landing' component={Landing} />
-        <Route path='/store' component={Store} />
-        <Route path='/details' component={Details} />
-        <Route path='/about' component={About} />
-        <Route path='/checkout' component={Checkout} />
-        </Switch>
+        <div>
+            <nav>
+                <Switch>
+                <Route exact path='/' component={App} />
+                <Route path='/landing' component={Landing} />
+                <Route path='/store' component={Store} />
+                <Route path='/details' component={Details} />
+                <Route path='/about' component={About} />
+                <Route path='/checkout' component={Checkout} />
+                </Switch>
+            </nav>
+        </div>
     </Router>,
     document.getElementById('root'));
-registerServiceWorker();
+// registerServiceWorker();
