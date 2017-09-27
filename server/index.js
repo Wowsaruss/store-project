@@ -1,16 +1,33 @@
-const cors = require('cors');
-const express = require('express');
-const bodyParser = require('body-parser');
-const massive = require('massive');
-const session = require('express-session');
-
 require('dotenv').config();
+const cors = require('cors')
+    , express = require('express')
+    , bodyParser = require('body-parser')
+    , massive = require('massive')
+    , session = require('express-session');
 const app = express();
-const port  =  3000;
+
 
 app.use(bodyParser.json());
 app.use(cors());
 
+// Massive connection
+
+massive(process.env.CONNECTION_STRING)
+.then( db => {
+    app.set('db', db)
+})
+
+// database
+
 // endpoints
+
+app.get('/api/home_products', (req, res) => {
+    req.app.get('db').get_products().then(products =>{
+        res.status(200).send(products);
+    }).catch((err) => {console.log(err)})
+})
+
+// Port
+const port  =  3000;
 
 app.listen(port, () => console.log(`listening on port ${port}`));

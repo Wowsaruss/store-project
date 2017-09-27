@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
 
-import './Details.css';
+import './Dresses.css';
 
-class Details extends Component {
+class Dresses extends Component {
   render() {
     return (
       <div>
         <div>
-          <h1>Details!</h1>
+          <h1>Dresses!</h1>
         </div>
       </div>
     )
   }
 }
 
-export default Details;
+export default Dresses;
