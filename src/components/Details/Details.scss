@@ -1,0 +1,9 @@
+.detail-image-style{
+    width: 400px;
+}
+
+@media (max-width: 568px) {
+   .detail-image-style {
+     width: 280px;
+   }
+}

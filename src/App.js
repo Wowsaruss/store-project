@@ -6,7 +6,7 @@ import Shop from './components/Shop/Shop';
 import ContactSupport from './components/Contact+Support/Contact+Support';
 import Cart from './components/Cart/Cart';
 import NavBar from './components/NavBar/NavBar';
-import Footer from './components/NavBar/NavBar';
+import Footer from './components//Footer/Footer';
 import Account from './components/Account/Account';
 import Details from './components/Details/Details';
 import Dresses from './components/Dresses/Dresses';
@@ -21,19 +21,21 @@ class App extends Component {
   render() {
   return (
     <div>
+      <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" />
+
         <NavBar />
-        <Switch>
-          <Route exact path='/' component={Landing} />
-          <Route path='/shop' component={Shop} />
-          <Route path='/contact+support' component={ContactSupport} />
-          <Route path='/cart' component={Cart} />
-          <Route path='/account' component={Account} />
-          <Route path='/details' component={Details} />
-          <Route path='/dresses' component={Dresses} />
-          <Route path='/newarrivals' component={NewArrivals} />
-          <Route path='/onsale' component={OnSale} />
-          <Route path='/sizing' component={Sizing} />
-        </Switch>
+            <Switch>
+              <Route exact path='/' component={Landing} />
+              <Route path='/shop' component={Shop} />
+              <Route path='/contact+support' component={ContactSupport} />
+              <Route path='/cart' component={Cart} />
+              <Route path='/account' component={Account} />
+              <Route path='/details/:id' component={Details} />
+              <Route path='/dresses' component={Dresses} />
+              <Route path='/newarrivals' component={NewArrivals} />
+              <Route path='/onsale' component={OnSale} />
+              <Route path='/sizing' component={Sizing} />
+            </Switch>  
         <Footer />
     </div>
   );

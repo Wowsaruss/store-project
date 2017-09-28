@@ -1,0 +1,27 @@
+.product-image-style {
+  width: 300px; }
+
+.hero-props {
+  font-family: 'Satisfy', cursive;
+  font-size: 40px;
+  color: rgba(228, 157, 50, 0.57);
+  padding: 0px;
+  margin: 0px; }
+
+.hero-image {
+  text-align: center;
+  height: 100vh; }
+
+.hero-text {
+  text-align: center;
+  padding: 0px;
+  margin: 0px; }
+
+.product-allign {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  align-content: stretch; }

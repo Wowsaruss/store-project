@@ -22,8 +22,15 @@ massive(process.env.CONNECTION_STRING)
 // endpoints
 
 app.get('/api/home_products', (req, res) => {
-    req.app.get('db').get_products().then(products =>{
+    req.app.get('db').get_products().then(products => {
         res.status(200).send(products);
+    }).catch((err) => {console.log(err)})
+})
+
+
+app.get('/api/product_details/:productid', (req, res) => {
+    req.app.get('db').get_product([req.params.productid]).then(product => {
+        res.send(product[0]);
     }).catch((err) => {console.log(err)})
 })
 

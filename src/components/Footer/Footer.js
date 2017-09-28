@@ -15,16 +15,15 @@ class Footer extends Component {
         return (
             <div>
                 <div>
-                    <div>                      
-                            <Link to='/account'>Account</Link>
-                            <Link to='/cart' >Cart</Link>
-                            <Link to='/search' >Search</Link>                     
-                            <Link to='/shop' >Shop</Link>
-                            <Link to='/newarrivals' >New Arrivals</Link>
-                            <Link to='/dresses'>Dresses</Link>
-                            <Link to='/onsale'>On Sale</Link>
-                            <Link to='/sizing'>Sizing</Link>
-                            <Link to='/contact+support' >Contact + Support</Link>        
+                    <div className='footer' >                   
+                            <li><Link to='/account'>Account</Link></li>
+                            <li><Link to='/cart' >Cart</Link></li>
+                            <li><Link to='/shop' >Shop</Link></li>
+                            <li><Link to='/newarrivals' >New Arrivals</Link></li>
+                            <li><Link to='/dresses'>Dresses</Link></li>
+                            <li><Link to='/onsale'>On Sale</Link></li>
+                            <li><Link to='/sizing'>Sizing</Link></li>
+                            <li><Link to='/contact+support' >Contact + Support</Link></li>     
                    </div>
                 </div>
             </div>

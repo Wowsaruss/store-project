@@ -2,6 +2,7 @@
   "name": "simulation-pt-2",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3000",
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.18.1",
