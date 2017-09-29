@@ -28,18 +28,20 @@ componentDidMount() {
               return(
               <div key={i}>
                   <div>
-                      <h3>
-                        {product.productname}
-                      </h3>
-                      <h4>
-                        ${product.productprice}
-                      </h4>
                   </div>
                   
-                    <div>
-                    <Link to={`/details/${product.productid}`} ><img className='product-image-style' src={product.imageurl} alt='' /></Link>
+                    <div className="container">
+                      <img className='product-image-style image' src={product.imageurl} alt='' />
+                      <div className="overlay">
+                      <Link to={`/details/${product.productid}`} ><div className="text">
+                        <hr/>
+                          {product.productname}<br />
+                          <hr/>
+                          ${product.productprice}
+                        </div></Link>
+                      </div>
                     </div>
-                  
+                
               </div>
               )
             })
@@ -52,7 +54,7 @@ componentDidMount() {
 
                   <div className='hero-props' >                    
                         <h1 className='hero-text'>Copper Ln.</h1>
-                        <img className='hero-image' src={HeroImage} alt='' />                     
+                        {/* <img className='hero-image' src={HeroImage} alt='' /> */}
                   </div>
 
                   <div className='product-allign' >

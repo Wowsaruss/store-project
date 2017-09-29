@@ -27,12 +27,17 @@ app.get('/api/home_products', (req, res) => {
     }).catch((err) => {console.log(err)})
 })
 
-
 app.get('/api/product_details/:productid', (req, res) => {
     req.app.get('db').get_product([req.params.productid]).then(product => {
         res.send(product[0]);
     }).catch((err) => {console.log(err)})
 })
+
+// app.post('/api/order', (req, res) =>{
+//     req.app.get('db').submit_order([shipname, billingname]).then(order => {
+//         res.status(200).json('Hey you!')
+//     }).catch((err) => {console.log(err)})
+// })
 
 // Port
 const port  =  3000;
