@@ -34,7 +34,7 @@ app.get('/api/product_details/:productid', (req, res) => {
 })
 
 // app.post('/api/order', (req, res) =>{
-//     req.app.get('db').submit_order([shipname, billingname]).then(order => {
+//     req.app.get('db').submit_order([]).then(order => {
 //         res.status(200).json('Hey you!')
 //     }).catch((err) => {console.log(err)})
 // })

@@ -21,7 +21,8 @@ class App extends Component {
   render() {
   return (
     <div>
-      <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" />
+      {/* <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" /> */}
+      <link href="https://fonts.googleapis.com/css?family=The+Girl+Next+Door" rel="stylesheet"/>
 
         <NavBar />
             <Switch>

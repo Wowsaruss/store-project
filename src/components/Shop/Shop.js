@@ -37,7 +37,7 @@ componentDidMount() {
                   </div>
                   
                     <div>
-                    <Link to={`/details/${product.productid}`} ><img className='product-image-style' src={product.imageurl} alt='' /></Link>
+                    <Link to={`/details/${product.productid}`} ><img className='image-size' src={product.imageurl} alt='' /></Link>
                     </div>
               </div>
               )
@@ -46,9 +46,9 @@ componentDidMount() {
     return (
       <div>
         <div>
-          <h1 className='shop-header' >Shop!</h1>
+          <h1 >Shop!</h1>
         </div>
-        <div className='product-allign'>
+        <div>
           {products}
         </div>
       </div>

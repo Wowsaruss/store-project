@@ -1,14 +1,14 @@
 .announcement-bar {
   text-align: center;
   background-color: #000000;
-  color: white; }
+  color: #FFFFFF; }
 
 .announcement-text {
   padding: 0px;
   margin: 0px; }
 
 .nav-link-bar {
-  background-color: gray;
+  background-color: #DEDEDE;
   color: white;
   padding: 5px;
   display: flex;
@@ -18,17 +18,6 @@
   align-items: center;
   align-content: stretch; }
 
-.nav-link-bar {
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
-  /* Set the navbar to fixed position */
-  top: 5;
-  /* Position the navbar at the top of the page */
-  width: 100%;
-  /* Full width */
-  z-index: 1; }
-
 a, a:active, a:hover, a:visited {
   color: #FFFFFF;
   text-decoration: none; }
@@ -36,8 +25,16 @@ a, a:active, a:hover, a:visited {
 a:active, a:hover {
   color: #000000; }
 
-.icon-links {
-  background-color: rgba(0, 0, 0, 0.24); }
+.cart-icon {
+  width: 35px; }
 
-.icon {
-  width: 50px; }
+.search-icon {
+  width: 30px; }
+
+.user-icon {
+  width: 30px; }
+
+.icon-position {
+  position: absolute;
+  top: 60px;
+  right: 20px; }

@@ -9,13 +9,13 @@ class Cart extends Component {
   render() {
     let shoppingCartDisplay = this.props.Cart.map((product, i) => {
     return (
-      <div key={i}>
+      <div key={i} className='item-display' >
           <img className='cart-image-style' src={product.imageurl} alt="" />
-           <div>
-              <h2>{product.productname}</h2>
+            <div>
+              <h4>{product.productname}</h4>
               <h2>${product.productprice}</h2>
-             <div>
-               <button onClick={() => this.props.removeFromCart(i)}>Remove From Shopping Cart</button>
+            <div>
+              <button onClick={() => this.props.removeFromCart(i)}>Remove From Cart</button>
             </div>
          </div>
       </div>
@@ -24,7 +24,12 @@ class Cart extends Component {
     return (
          <div>
                 {shoppingCartDisplay[0] ? 
-                shoppingCartDisplay: <div className="go-buy-something"><h1>Your shopping cart is empty!  Go add something!</h1></div>}
+                shoppingCartDisplay: 
+                <div>
+                  <h1>Your shopping cart is empty!  Go add something!</h1>
+                </div>
+                }
+                <button>CHECKOUT</button>
          </div>
     )
   }

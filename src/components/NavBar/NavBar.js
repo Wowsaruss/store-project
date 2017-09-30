@@ -4,6 +4,9 @@ import {Link} from 'react-router-dom';
 import './NavBar.css';
 import ShoppingCart from '../../Assets/ShoppingCart.png';
 import Search from '../../Assets/Search.png';
+import blacksearch from '../../Assets/black-search.png';
+import blackcart from '../../Assets/black-cart.png';
+import blackUser from '../../Assets/blackUser.png';
 
 class NavBar extends Component {
     constructor() {
@@ -13,16 +16,14 @@ class NavBar extends Component {
         }
       }
 
-
     render(){
         return (
             <div>
-
                 <div>
                     <div className='announcement-bar' >
                             <p className='announcement-text' >Free shipping on all orders over $50!</p>
                     </div>
-                    <div className='nav-link-bar' id='navbar' >                       
+                    <div className='nav-link-bar'>                       
                             <a><Link to='/shop' >SHOP</Link></a>
                             <a><Link to='/newarrivals' >NEW ARRIVALS</Link></a>
                             <a><Link to='/dresses'>DRESSES</Link></a>
@@ -30,10 +31,10 @@ class NavBar extends Component {
                             <a><Link to='/sizing'>SIZING</Link></a>
                             <a><Link to='/contact+support' >CONTACT + SUPPORT</Link></a>  
                    </div>
-                   <div className='icon-links' >
-                            <Link to='/account'><img className='icon' src={ShoppingCart} alt='' /></Link>
-                            <Link to='/cart' ><img className='icon' src={ShoppingCart} alt='' /></Link>
-                            <Link to='/search' ><img className='icon' src={Search} alt='' /></Link> 
+                   <div className='icon-position' >
+                            <Link to='/account'><img className='user-icon' src={blackUser} alt='' /></Link>
+                            <Link to='/cart' ><img className='cart-icon' src={blackcart} alt='' /></Link>
+                            <Link to='/search' ><img className='search-icon' src={blacksearch} alt='' /></Link> 
                    </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 
 import './Landing.css';
-import HeroImage from '../../Assets/HeroImage.jpg';
+import cherryBlossom from '../../Assets/cherryBlossom.jpg';
 
 class Landing extends Component {
   constructor(props) {
@@ -27,9 +27,9 @@ componentDidMount() {
      const products = this.state.productList.map(function(product, i) {
               return(
               <div key={i}>
+                <link href="https://fonts.googleapis.com/css?family=The+Girl+Next+Door" rel="stylesheet"/>
                   <div>
-                  </div>
-                  
+                  </div>                  
                     <div className="container">
                       <img className='product-image-style image' src={product.imageurl} alt='' />
                       <div className="overlay">
@@ -40,8 +40,7 @@ componentDidMount() {
                           ${product.productprice}
                         </div></Link>
                       </div>
-                    </div>
-                
+                    </div>              
               </div>
               )
             })
@@ -49,18 +48,14 @@ componentDidMount() {
 
     return (
         <div>
-
             <div>
-
-                  <div className='hero-props' >                    
-                        <h1 className='hero-text'>Copper Ln.</h1>
-                        {/* <img className='hero-image' src={HeroImage} alt='' /> */}
+                  <div className='hero-props bg' >                    
+                        <h1 className='hero-text'>Copper Bloom</h1>
+                        <img className='hero-image' />
                   </div>
-
                   <div className='product-allign' >
                     {products}
                   </div>
-
             </div>
         </div>
     )

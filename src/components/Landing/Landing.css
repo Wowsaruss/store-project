@@ -1,24 +1,37 @@
-.product-image-style {
-  width: 300px; }
-
 .hero-props {
-  font-family: 'Satisfy', cursive;
-  font-size: 40px;
-  color: rgba(228, 157, 50, 0.57);
+  font-family: 'The Girl Next Door', cursive;
+  font-size: 60px;
+  color: #e18c41;
   padding: 0px;
   margin: 0px; }
 
 .hero-image {
-  text-align: center;
-  height: 100vh; }
+  height: 91.5vh; }
+
+.bg {
+  /* The image used */
+  background-image: url("https://images.unsplash.com/photo-1497214068716-571605b05ca8?dpr=1&auto=format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=");
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .hero-text {
   text-align: center;
   padding: 0px;
-  margin: 0px; }
+  margin: 0px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
 
-.product-allign {
-  text-align: center;
+.product-image-style {
+  width: 300px; }
+
+.image {
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -26,14 +39,12 @@
   align-items: baseline;
   align-content: stretch; }
 
+.product-allign {
+  text-align: center; }
+
 .container {
   position: relative;
   width: 50%; }
-
-.image {
-  display: block;
-  width: 100%;
-  height: auto; }
 
 .overlay {
   position: absolute;
@@ -45,13 +56,7 @@
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: #000000;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: baseline;
-  align-content: stretch; }
+  background-color: #000000; }
 
 .container:hover .overlay {
   opacity: .6; }
