@@ -14,8 +14,8 @@ class Footer extends Component {
     render(){
         return (
             <div>
-                <div>
-                    <div className='footer' >                   
+                <div className='footer' >
+                    <div >                   
                             <li><Link to='/account'>Account</Link></li>
                             <li><Link to='/cart' >Cart</Link></li>
                             <li><Link to='/shop' >Shop</Link></li>
@@ -25,6 +25,7 @@ class Footer extends Component {
                             <li><Link to='/sizing'>Sizing</Link></li>
                             <li><Link to='/contact+support' >Contact + Support</Link></li>     
                    </div>
+                   COPYRIGHT © 2017 COPPER BLOOM
                 </div>
             </div>
         )

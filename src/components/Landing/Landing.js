@@ -27,20 +27,25 @@ componentDidMount() {
      const products = this.state.productList.map(function(product, i) {
               return(
               <div key={i}>
+
                 <link href="https://fonts.googleapis.com/css?family=The+Girl+Next+Door" rel="stylesheet"/>
-                  <div>
-                  </div>                  
-                    <div className="container">
-                      <img className='product-image-style image' src={product.imageurl} alt='' />
-                      <div className="overlay">
-                      <Link to={`/details/${product.productid}`} ><div className="text">
-                        <hr/>
-                          {product.productname}<br />
-                          <hr/>
-                          ${product.productprice}
-                        </div></Link>
-                      </div>
-                    </div>              
+                <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" />
+                  
+                       <div className="container">
+                              <div className='photo-position' >
+                                <img className='product-image-style image' src={product.imageurl} alt='' />
+                              </div>
+                              <div className="overlay">
+                                <Link to={`/details/${product.productid}`} >
+                                    <div className="text">
+                                      <hr/>
+                                        {product.productname}<br />
+                                      <hr/>
+                                        ${product.productprice}
+                                    </div>
+                                  </Link>
+                              </div>
+                       </div>              
               </div>
               )
             })
@@ -50,7 +55,7 @@ componentDidMount() {
         <div>
             <div>
                   <div className='hero-props bg' >                    
-                        <h1 className='hero-text'>Copper Bloom</h1>
+                        <h1 className='hero-text'>COPPER BLOOM</h1>
                         <img className='hero-image' />
                   </div>
                   <div className='product-allign' >

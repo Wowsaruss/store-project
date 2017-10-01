@@ -31,6 +31,16 @@ class Details extends Component {
           <img className='detail-image-style' src={this.state.product.imageurl} alt='' />
           <p>${this.state.product.productprice}</p>
           <p>{this.state.product.description}</p>
+          <form>
+            <select>
+              <option value="xs">XS</option>
+              <option value="s">S</option>
+              <option value="m">M</option>
+              <option value="l">L</option>
+              <option value="xl">XL</option>
+              <option value="xxl">XXL</option>
+            </select>
+          </form>
           <button onClick={() => this.props.addToCart(this.state.product)} >ADD TO CART</button>
       </div>
     )

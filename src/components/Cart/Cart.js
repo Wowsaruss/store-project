@@ -10,14 +10,33 @@ class Cart extends Component {
     let shoppingCartDisplay = this.props.Cart.map((product, i) => {
     return (
       <div key={i} className='item-display' >
-          <img className='cart-image-style' src={product.imageurl} alt="" />
-            <div>
-              <h4>{product.productname}</h4>
-              <h2>${product.productprice}</h2>
-            <div>
-              <button onClick={() => this.props.removeFromCart(i)}>Remove From Cart</button>
-            </div>
+          <div>
          </div>
+
+         <table>
+                  <tr>
+                    <th>PRODUCT</th>
+                    <th></th>
+                    <th>PRICE</th>
+                    <th>SIZE</th>
+                    <th>QTY</th>
+                    <th>REMOVE</th>
+                    <th>TOTAL</th>
+                  </tr>
+                  <tr>
+                    <td><img className='cart-image-style' src={product.imageurl} alt="" /></td>
+                    <td><h4>{product.productname}</h4></td>
+                    <td><h2>${product.productprice}</h2></td>
+                    <td>???</td>
+                    <td><form>
+                      <input type="number" value=""/>
+                    </form></td>
+                    <td><button onClick={() => this.props.removeFromCart(i)}>REMOVE</button></td>
+                    <td><h2>${product.productprice}</h2></td>
+                  </tr>
+         </table>
+
+
       </div>
     )
   })
@@ -29,7 +48,6 @@ class Cart extends Component {
                   <h1>Your shopping cart is empty!  Go add something!</h1>
                 </div>
                 }
-                <button>CHECKOUT</button>
          </div>
     )
   }
