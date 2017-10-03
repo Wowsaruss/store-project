@@ -27,6 +27,12 @@ app.get('/api/home_products', (req, res) => {
     }).catch((err) => {console.log(err)})
 })
 
+app.get('/api/dresses', (req, res) => {
+    req.app.get('db').get_dresses().then(products => {
+        res.status(200).send(products);
+    }).catch((err) => {console.log(err)})
+})
+
 app.get('/api/product_details/:productid', (req, res) => {
     req.app.get('db').get_product([req.params.productid]).then(product => {
         res.send(product[0]);

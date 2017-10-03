@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import {addToCart} from '../../redux/reducer'
+import {addToCart} from '../../redux/reducer';
+import {Link} from 'react-router-dom';
 
 import './Details.css';
 
@@ -26,6 +27,12 @@ class Details extends Component {
   
     return (
       <div>
+        <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" />
+        <div>
+          <Link to='/' >
+          <h1 className='logo-font' >COPPER BLOOM</h1>
+          </Link>
+        </div>
           <h2>{this.state.product.productname}</h2>
           <hr/>
           <img className='detail-image-style' src={this.state.product.imageurl} alt='' />

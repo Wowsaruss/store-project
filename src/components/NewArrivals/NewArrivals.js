@@ -25,6 +25,7 @@ componentDidMount() {
     const products = this.state.productList.map(function(product, i) {
     return (
       <div key={i}>
+        <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" />
                   <div>
                       <h3>
                         {product.productname}
@@ -44,7 +45,9 @@ componentDidMount() {
             return (
               <div>
                 <div>
-                  <h1 >New Arrivals!</h1>
+                  <Link to='/' >
+                  <h1 className='logo-font' >COPPER BLOOM</h1>
+                  </Link>
                 </div>
                 <div>
                   {products}

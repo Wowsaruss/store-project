@@ -36,16 +36,30 @@
     // z-index: 1;
 }
 
-$a-tags: 'a, a:active, a:hover, a:visited';
-$a-tags-hover: 'a:active, a:hover';
+// $a-tags: 'a, a:active, a:hover, a:visited';
+// $a-tags-hover: 'a:active, a:hover';
  
-#{$a-tags} {
-  color: #FFFFFF;
-  text-decoration: none;
+// #{$a-tags} {
+//   color: #FFFFFF;
+//   text-decoration: none;
+// }
+// #{$a-tags-hover} {
+//   color: #000000;
+// }
+a {
+    color: #020202;
+    text-decoration: none;
 }
-#{$a-tags-hover} {
-  color: #000000;
+.logo-font {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Megrim', cursive;
+    font-size: 60px;
+    width: 200px;
 }
+
+
+
 .cart-icon {
     width: 35px;
 }

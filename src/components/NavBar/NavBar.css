@@ -18,12 +18,16 @@
   align-items: center;
   align-content: stretch; }
 
-a, a:active, a:hover, a:visited {
-  color: #FFFFFF;
+a {
+  color: #020202;
   text-decoration: none; }
 
-a:active, a:hover {
-  color: #000000; }
+.logo-font {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Megrim', cursive;
+  font-size: 60px;
+  width: 200px; }
 
 .cart-icon {
   width: 35px; }

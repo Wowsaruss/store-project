@@ -9,33 +9,34 @@ class Dresses extends Component {
     super(props)
 
     this.state = {
-      productList: []
+      dresses: []
     }
   }
 
 componentDidMount() {
-  axios.get('http://localhost:3000/api/home_products').then(res => {
+  axios.get('http://localhost:3000/api/dresses').then(res => {
     this.setState({
-      productList: res.data
+      dresses: res.data
     })
   })
 }
 
   render() {
-    const products = this.state.productList.map(function(product, i) {
+    const dresss = this.state.dresses.map(function(dress, i) {
     return (
       <div key={i}>
+        <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" />
                   <div>
                       <h3>
-                        {product.productname}
+                        {dress.productname}
                       </h3>
                       <h4>
-                        ${product.productprice}
+                        ${dress.productprice}
                       </h4>
                   </div>
                   
                     <div>
-                    <Link to={`/details/${product.productid}`} ><img className='image-size' src={product.imageurl} alt='' /></Link>
+                    <Link to={`/details/${dress.productid}`} ><img className='image-size' src={dress.imageurl} alt='' /></Link>
                     </div>
               </div>
               )
@@ -44,10 +45,12 @@ componentDidMount() {
             return (
               <div>
                 <div>
-                  <h1 >Dresses!</h1>
+                  <Link to='/' >
+                  <h1 className='logo-font' >COPPER BLOOM</h1>
+                  </Link>
                 </div>
                 <div>
-                  {products}
+                  {dresss}
                 </div>
               </div>
             )

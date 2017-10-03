@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {removeFromCart} from '../../redux/reducer';
+import {Link} from 'react-router-dom';
 
 import './Cart.css';
 
@@ -10,6 +11,12 @@ class Cart extends Component {
     let shoppingCartDisplay = this.props.Cart.map((product, i) => {
     return (
       <div key={i} className='item-display' >
+        <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" />
+        <div>
+          <Link to='/' >
+          <h1 className='logo-font' >COPPER BLOOM</h1>
+          </Link>
+        </div>
           <div>
          </div>
 
@@ -42,6 +49,11 @@ class Cart extends Component {
   })
     return (
          <div>
+                   <div>
+                    <Link to='/' >
+                    <h1 className='logo-font' >COPPER BLOOM</h1>
+                    </Link>
+                  </div>
                 {shoppingCartDisplay[0] ? 
                 shoppingCartDisplay: 
                 <div>

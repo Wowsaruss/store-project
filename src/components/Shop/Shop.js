@@ -21,24 +21,31 @@ componentDidMount() {
     })
   })
 }
+// componentDidMount() {
+//   this.props.pinToBoard();
+// }
 
     render() {
 
      const products = this.state.productList.map(function(product, i) {
               return(
               <div key={i}>
-                  <div>
-                      <h3>
-                        {product.productname}
-                      </h3>
-                      <h4>
-                        ${product.productprice}
-                      </h4>
+                <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" />
+                  <div className="container">
+                              <div className='photo-position' >
+                                <img className='product-image-style image' src={product.imageurl} alt='' />
+                              </div>
+                              <div className="overlay">
+                                <Link to={`/details/${product.productid}`} >
+                                    <div className="text">
+                                      <hr/>
+                                        {product.productname}<br />
+                                      <hr/>
+                                        ${product.productprice}
+                                    </div>
+                                  </Link>
+                              </div>
                   </div>
-                  
-                    <div>
-                    <Link to={`/details/${product.productid}`} ><img className='image-size' src={product.imageurl} alt='' /></Link>
-                    </div>
               </div>
               )
             })
@@ -46,7 +53,9 @@ componentDidMount() {
     return (
       <div>
         <div>
-          <h1 >Shop!</h1>
+          <Link to='/' >
+          <h1 className='logo-font' >COPPER BLOOM</h1>
+          </Link>
         </div>
         <div>
           {products}

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 import './Sizing.css';
 
@@ -6,6 +7,12 @@ class Sizing extends Component {
   render() {
     return (
       <div>
+        <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" />
+        <div>
+          <Link to='/' >
+          <h1 className='logo-font' >COPPER BLOOM</h1>
+          </Link>
+        </div>
         <div>
           <h1>General Sizing:</h1>
           <h4>Small: 0-4</h4>

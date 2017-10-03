@@ -25,6 +25,13 @@ class Footer extends Component {
                             <li><Link to='/sizing'>Sizing</Link></li>
                             <li><Link to='/contact+support' >Contact + Support</Link></li>     
                    </div>
+
+                   <audio controls>
+                    <source src="horse.ogg" type="audio/ogg" />
+                    <source src="horse.mp3" type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                    </audio>
+
                    COPYRIGHT © 2017 COPPER BLOOM
                 </div>
             </div>
