@@ -9,6 +9,7 @@ class OnSale extends Component {
       <div>
         <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" />
         <div>
+
           <Link to='/' >
           <h1 className='logo-font' >COPPER BLOOM</h1>
           </Link>

@@ -2,7 +2,22 @@
 
 
 .footer {
-    background-color: #E0E0E0;
+    text-align: center;
+    background: linear-gradient(#DEDEDE, #FFFFFF);
     height: 250px;
     list-style-type: none;
+    bottom: 0;
+    width: 100%;
 }
+.social-icons {
+   background-color: black;
+   height: 30px;
+   border-radius: 5px;
+   margin: 15px;
+}
+.social-list {
+    display: flex;
+    justify-content: center;
+}
+
+

@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
 import './Footer.css';
+import facebook from '../../Assets/facebook.svg';
+import instagram from '../../Assets/instagram.svg';
+import pinterest from '../../Assets/pinterest.svg';
+import twitter from '../../Assets/twitter.svg';
 
 class Footer extends Component {
     constructor() {
@@ -25,13 +29,14 @@ class Footer extends Component {
                             <li><Link to='/sizing'>Sizing</Link></li>
                             <li><Link to='/contact+support' >Contact + Support</Link></li>     
                    </div>
-
-                   <audio controls>
-                    <source src="horse.ogg" type="audio/ogg" />
-                    <source src="horse.mp3" type="audio/mpeg" />
-                    Your browser does not support the audio element.
-                    </audio>
-
+                   <div>
+                        <div className='social-list' >
+                            <a href='http://pinterest.com' ><img src={pinterest} className='social-icons' alt='' /></a>
+                            <a href='http://facebook.com' ><img src={facebook} className='social-icons' alt='' /></a>
+                            <a href='http://instagram.com' ><img src={instagram} className='social-icons' alt='' /></a>
+                            <a href='http://twitter.com' ><img src={twitter} className='social-icons' alt='' /></a>
+                        </div>
+                   </div>
                    COPYRIGHT © 2017 COPPER BLOOM
                 </div>
             </div>

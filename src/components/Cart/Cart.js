@@ -2,23 +2,45 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {removeFromCart} from '../../redux/reducer';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 import './Cart.css';
 
+
+// export function Cart( { checkout, history, productsInCart } ) {
+//   const products = productsInCart.map( product => (
+//     <CartItem
+//       key={ product.id }
+//       logo={ product.logo }
+//       name={ product.name }
+//       price={ product.price }
+//     />
+//   ) );
+//   const cartTotal = productsInCart.reduce( ( total, { price } ) => total + price, 0 );
+
+
 class Cart extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      order: []
+    }
+  }
+
+  componentDidMount() {
+    axios.post('/api/submit_order').then(res => {
+      this.setState({
+        productList: res.data
+      })
+    })
+  }
 
   render() {
     let shoppingCartDisplay = this.props.Cart.map((product, i) => {
     return (
       <div key={i} className='item-display' >
-        <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" />
-        <div>
-          <Link to='/' >
-          <h1 className='logo-font' >COPPER BLOOM</h1>
-          </Link>
-        </div>
-          <div>
-         </div>
+        
 
          <table>
                   <tr>
@@ -49,6 +71,7 @@ class Cart extends Component {
   })
     return (
          <div>
+           <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" />
                    <div>
                     <Link to='/' >
                     <h1 className='logo-font' >COPPER BLOOM</h1>
@@ -60,6 +83,7 @@ class Cart extends Component {
                   <h1>Your shopping cart is empty!  Go add something!</h1>
                 </div>
                 }
+                <button >CHECKOUT</button>
          </div>
     )
   }

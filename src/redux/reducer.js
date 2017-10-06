@@ -1,9 +1,8 @@
-import * as pinterestController from './pinterestController';
+
 
 // Constants
 const ADD_TO_CART = "ADD_TO_CART";
 const REMOVE_FROM_CART = "REMOVE_FROM_CART";
-const PIN_TO_PINTEREST = "PIN_TO_PINTEREST";
 
 let initialState = {
     Cart: []
@@ -23,10 +22,6 @@ export default function reducer(state=initialState, action) {
             newArray.splice(action.index, 1);
             return Object.assign({}, state, {
                 Cart: newArray});
-
-        case PIN_TO_PINTEREST:
-            return Object.assign({}, state, {
-                loading: false, products: action.payload});
             
         default:
             return state;
@@ -45,11 +40,5 @@ export function removeFromCart(productIndex) {
     return {
         type: REMOVE_FROM_CART,
         payload: productIndex
-    }
-}
-export function pinToPinterest(products) {
-    return {
-        type: PIN_TO_PINTEREST,
-        payload: pinterestController.pinToBoard()
     }
 }

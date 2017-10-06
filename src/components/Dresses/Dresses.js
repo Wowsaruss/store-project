@@ -9,35 +9,42 @@ class Dresses extends Component {
     super(props)
 
     this.state = {
-      dresses: []
+      dressesList: []
     }
   }
 
 componentDidMount() {
   axios.get('http://localhost:3000/api/dresses').then(res => {
     this.setState({
-      dresses: res.data
+      dressesList: res.data
     })
   })
 }
 
   render() {
-    const dresss = this.state.dresses.map(function(dress, i) {
+    const dresses = this.state.dressesList.map(function(dresses, i) {
     return (
-      <div key={i}>
-        <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" />
-                  <div>
-                      <h3>
-                        {dress.productname}
-                      </h3>
-                      <h4>
-                        ${dress.productprice}
-                      </h4>
-                  </div>
-                  
-                    <div>
-                    <Link to={`/details/${dress.productid}`} ><img className='image-size' src={dress.imageurl} alt='' /></Link>
-                    </div>
+              <div key={i}>
+                
+
+                      <div className='container' >
+
+                              <div className='divsize' >
+                                <img className='imgsize' src={dresses.imageurl} alt='' />
+                              </div>
+
+                              <div className='overlay' >
+                                  <Link to={`/details/${dresses.productid}`} >
+                                    <div className='text' >
+                                      <hr/>
+                                        {dresses.productname}<br />
+                                      <hr/>
+                                        ${dresses.productprice}
+                                    </div>
+                                  </Link>
+                              </div>
+
+                       </div>
               </div>
               )
             })
@@ -50,7 +57,7 @@ componentDidMount() {
                   </Link>
                 </div>
                 <div>
-                  {dresss}
+                   <div className='product-flex' >{dresses}</div>
                 </div>
               </div>
             )

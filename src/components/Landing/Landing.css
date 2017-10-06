@@ -1,7 +1,7 @@
 .hero-props {
   font-family: 'Megrim', cursive;
   font-size: 60px;
-  color: black;
+  color: #ba581b;
   padding: 0px;
   margin: 0px; }
 
@@ -24,24 +24,12 @@
   transform: translate(-50%, -50%); }
 
 .hero-image {
-  height: 92vh; }
+  height: 97vh; }
 
 .container {
   position: relative;
   display: inline-block;
-  width: 400px; }
-
-.photo-position {
-  display: inline-block;
-  background-color: red; }
-
-.product-image-style {
   width: 300px; }
-
-.image {
-  display: inline-block;
-  width: 100%;
-  height: auto; }
 
 .overlay {
   position: absolute;
@@ -66,8 +54,19 @@
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%); }
 
-.product-allign {
-  text-align: center; }
-
 .container:hover .overlay {
   opacity: .6; }
+
+.divsize {
+  width: 300px; }
+
+.imgsize {
+  width: 100%; }
+
+.product-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch; }

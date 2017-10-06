@@ -39,11 +39,11 @@ app.get('/api/product_details/:productid', (req, res) => {
     }).catch((err) => {console.log(err)})
 })
 
-// app.post('/api/order', (req, res) =>{
-//     req.app.get('db').submit_order([]).then(order => {
-//         res.status(200).json('Hey you!')
-//     }).catch((err) => {console.log(err)})
-// })
+app.post('/api/submit_order', (req, res) => {
+    req.app.get('db').submit_order().then(order => {
+        res.status(200).json();
+    }).catch((err) => {console.log(err)})
+})
 
 // Port
 const port  =  3000;

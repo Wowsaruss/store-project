@@ -31,10 +31,13 @@ componentDidMount() {
               return(
               <div key={i}>
                 <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" />
+
                   <div className="container">
-                              <div className='photo-position' >
-                                <img className='product-image-style image' src={product.imageurl} alt='' />
+
+                              <div className='divsize' >
+                                <img className='imgsize' src={product.imageurl} alt='' />
                               </div>
+
                               <div className="overlay">
                                 <Link to={`/details/${product.productid}`} >
                                     <div className="text">
@@ -45,7 +48,9 @@ componentDidMount() {
                                     </div>
                                   </Link>
                               </div>
+
                   </div>
+
               </div>
               )
             })
@@ -58,7 +63,7 @@ componentDidMount() {
           </Link>
         </div>
         <div>
-          {products}
+          <div className='product-flex' >{products}</div>
         </div>
       </div>
     )

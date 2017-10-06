@@ -18,16 +18,16 @@ class NavBar extends Component {
         return (
             <div>
                 <div>
-                    <div className='announcement-bar' >
-                            <p className='announcement-text' >Free shipping on all orders over $50!</p>
-                    </div>
-                    <div className='nav-link-bar'>                       
+
+                    <div className='nav-bar' >
+                    <div className='nav-link-bar'>
                             <a><Link to='/shop' >SHOP</Link></a>
                             <a><Link to='/newarrivals' >NEW ARRIVALS</Link></a>
                             <a><Link to='/dresses'>DRESSES</Link></a>
                             <a><Link to='/onsale'>ON SALE</Link></a>
                             <a><Link to='/sizing'>SIZING</Link></a>
                             <a><Link to='/contact+support' >CONTACT + SUPPORT</Link></a>  
+                   </div>
                    </div>
                    <div className='icon-position' >
                             <Link to='/account'><img className='user-icon' src={blackUser} alt='' /></Link>
