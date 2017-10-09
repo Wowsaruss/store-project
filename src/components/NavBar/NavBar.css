@@ -24,15 +24,15 @@
   align-content: stretch; }
 
 a {
-  color: #020202;
+  color: #431400;
   text-decoration: none; }
 
 .logo-font {
-  padding: 0px;
+  padding: 20px;
   margin: 0px;
   font-family: 'Megrim', cursive;
   font-size: 60px;
-  width: 200px; }
+  width: 500px; }
 
 .cart-icon {
   width: 35px;

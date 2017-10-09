@@ -1,0 +1,46 @@
+
+.container {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #000000;
+    font-family: 'Megrim', cursive;
+}
+.text {
+    position: absolute;
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+.container:hover .overlay {
+    opacity: .6;
+}
+.divsize {
+    width: 300px;
+}
+.imgsize {
+    width: 100%;
+}
+.product-flex {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+}

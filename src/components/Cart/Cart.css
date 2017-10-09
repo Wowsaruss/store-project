@@ -28,3 +28,20 @@ input[type=text]:focus {
   font-family: 'Megrim', cursive;
   font-size: 60px;
   width: 200px; }
+
+.checkout-button {
+  text-align: center; }
+
+.checkout {
+  padding: 0px;
+  margin: 20px;
+  height: 40px;
+  width: 100px;
+  background-color: black;
+  color: white; }
+
+.empty-cart {
+  text-align: center; }
+
+input {
+  width: 30px; }

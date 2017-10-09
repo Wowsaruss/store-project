@@ -33,7 +33,7 @@ class Footer extends Component {
                         <div className='social-list' >
                             <a href='http://pinterest.com' ><img src={pinterest} className='social-icons' alt='' /></a>
                             <a href='http://facebook.com' ><img src={facebook} className='social-icons' alt='' /></a>
-                            <a href='http://instagram.com' ><img src={instagram} className='social-icons' alt='' /></a>
+                            <a href='https://www.instagram.com/copperbloom_/' ><img src={instagram} className='social-icons' alt='' /></a>
                             <a href='http://twitter.com' ><img src={twitter} className='social-icons' alt='' /></a>
                         </div>
                    </div>

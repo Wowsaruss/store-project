@@ -7,18 +7,6 @@ import axios from 'axios';
 import './Cart.css';
 
 
-// export function Cart( { checkout, history, productsInCart } ) {
-//   const products = productsInCart.map( product => (
-//     <CartItem
-//       key={ product.id }
-//       logo={ product.logo }
-//       name={ product.name }
-//       price={ product.price }
-//     />
-//   ) );
-//   const cartTotal = productsInCart.reduce( ( total, { price } ) => total + price, 0 );
-
-
 class Cart extends Component {
   constructor(props) {
     super(props)
@@ -56,10 +44,15 @@ class Cart extends Component {
                     <td><img className='cart-image-style' src={product.imageurl} alt="" /></td>
                     <td><h4>{product.productname}</h4></td>
                     <td><h2>${product.productprice}</h2></td>
-                    <td>???</td>
-                    <td><form>
-                      <input type="number" value=""/>
-                    </form></td>
+                    <td><select>
+                        <option>XS</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                        <option>XXL</option>
+                    </select></td>
+                    <td><form><input type="number" name="quantity" min="1" placeholder='1' max="" /></form></td>
                     <td><button onClick={() => this.props.removeFromCart(i)}>REMOVE</button></td>
                     <td><h2>${product.productprice}</h2></td>
                   </tr>
@@ -71,7 +64,6 @@ class Cart extends Component {
   })
     return (
          <div>
-           <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" />
                    <div>
                     <Link to='/' >
                     <h1 className='logo-font' >COPPER BLOOM</h1>
@@ -79,11 +71,15 @@ class Cart extends Component {
                   </div>
                 {shoppingCartDisplay[0] ? 
                 shoppingCartDisplay: 
-                <div>
+                <div className='empty-cart' >
                   <h1>Your shopping cart is empty!  Go add something!</h1>
                 </div>
                 }
-                <button >CHECKOUT</button>
+                <hr />
+                <div className='checkout-button' >
+                  <button className='checkout' >UPDATE</button>
+                  <button className='checkout' >CHECKOUT</button>
+                </div>
          </div>
     )
   }

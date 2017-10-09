@@ -30,7 +30,6 @@ componentDidMount() {
      const products = this.state.productList.map(function(product, i) {
               return(
               <div key={i}>
-                <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" />
 
                   <div className="container">
 

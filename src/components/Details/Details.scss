@@ -1,5 +1,23 @@
+.product-detail-title {
+  padding: 20px;
+  margin: 0px;
+}
+
+hr {
+  padding: 0px;
+  margin: 0px;
+}
+
 .detail-image-style{
     width: 400px;
+    margin: 50px;
+}
+
+.details-description {
+  border: 1px solid black;
+  width: 500px;
+  margin: 0px;
+  padding: 30px;
 }
 
 @media (max-width: 568px) {
