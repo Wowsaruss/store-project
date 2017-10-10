@@ -16,22 +16,23 @@ class NavBar extends Component {
 
     render(){
         return (
-            <div>
+            <div className='sticky-nav' >
                 <div>
 
                     <div className='nav-bar' >
-                    <div className='nav-link-bar'>
-                            <a><Link to='/shop' >SHOP</Link></a>
-                            <a><Link to='/newarrivals' >NEW ARRIVALS</Link></a>
-                            <a><Link to='/dresses'>DRESSES</Link></a>
-                            <a><Link to='/onsale'>ON SALE</Link></a>
-                            <a><Link to='/sizing'>SIZING</Link></a>
-                            <a><Link to='/contact+support' >CONTACT + SUPPORT</Link></a>  
-                   </div>
+                        <div className='nav-link-bar'>
+                                <a><Link to='/shop' >SHOP</Link></a>
+                                <a><Link to='/newarrivals' >NEW ARRIVALS</Link></a>
+                                <a><Link to='/dresses'>DRESSES</Link></a>
+                                <a><Link to='/onsale'>ON SALE</Link></a>
+                                <a><Link to='/sizing'>SIZING</Link></a>
+                                <a><Link to='/contact+support' >CONTACT + SUPPORT</Link></a>  
+                        </div>
+                        <hr/>
                    </div>
                    <div className='icon-position' >
                             <Link to='/account'><img className='user-icon' src={blackUser} alt='' /></Link>
-                            <Link to='/cart' ><img className='cart-icon' src={blackcart} alt='' /></Link>
+                            <Link to='/cart' ><img className='cart-icon' src={blackcart} alt='' /><span class="badge">(5)</span></Link>
                             <Link to='/search' ><img className='search-icon' src={blacksearch} alt='' /></Link> 
                    </div>
                 </div>

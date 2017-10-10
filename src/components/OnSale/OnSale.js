@@ -7,13 +7,12 @@ class OnSale extends Component {
   render() {
     return (
       <div>
-        <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" />
         <div>
-
           <Link to='/' >
           <h1 className='logo-font' >COPPER BLOOM</h1>
           </Link>
         </div>
+        <hr/>
       </div>
     )
   }

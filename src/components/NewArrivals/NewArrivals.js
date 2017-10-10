@@ -22,23 +22,23 @@ componentDidMount() {
 }
 
   render() {
-    const newArrivals = this.state.newArrivals.map(function(newArrivals, i) {
+    const newArrival = this.state.newArrivals.map(function(newArrivals, i) {
     return (
               <div key={i}>
 
 <div className='container' >
 
                               <div className='divsize' >
-                                <img className='imgsize' src={newArrivals.imageurl} alt='' />
+                                <img className='imgsize' src={newArrival.imageurl} alt='' />
                               </div>
 
                               <div className='overlay' >
-                                  <Link to={`/details/${newArrivals.productid}`} >
+                                  <Link to={`/details/${newArrival.productid}`} >
                                     <div className='text' >
                                       <hr/>
-                                        {newArrivals.productname}<br />
+                                        {newArrival.productname}<br />
                                       <hr/>
-                                        ${newArrivals.productprice}
+                                        ${newArrival.productprice}
                                     </div>
                                   </Link>
                               </div>
@@ -55,8 +55,9 @@ componentDidMount() {
                   <h1 className='logo-font' >COPPER BLOOM</h1>
                   </Link>
                 </div>
+                <hr/>
                 <div>
-                  <div className='product-flex' >{newArrivals}</div>
+                  <div className='product-flex' >{newArrival}</div>
                 </div>
               </div>
             )

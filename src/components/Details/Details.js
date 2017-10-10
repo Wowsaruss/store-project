@@ -26,23 +26,30 @@ class Details extends Component {
   render() {
   
     return (
-      <div>
-        <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" />
+      <div >
         <div>
           <Link to='/' >
           <h1 className='logo-font' >COPPER BLOOM</h1>
           </Link>
         </div>
-          <h2 className='product-detail-title' >{this.state.product.productname}</h2>
-          <hr />
-          <img className='detail-image-style' src={this.state.product.imageurl} alt='' />
-          <div>
-            <p>${this.state.product.productprice}</p>
-            <div className='details-description' >
-              <p>{this.state.product.description}</p>
-            </div>
-            <button onClick={() => this.props.addToCart(this.state.product)} >ADD TO CART</button>
-          </div>
+        <div className='outer-div'>
+                <h2 className='product-detail-title' >{this.state.product.productname}</h2>
+                <hr />
+                <div className='div-align' >
+                    <div>
+                        <img className='detail-image-style' src={this.state.product.imageurl} alt='' />
+                    </div>
+                    <div>
+                        <h2>${this.state.product.productprice}</h2>
+                        <button className='checkout' onClick={() => this.props.addToCart(this.state.product)} >ADD TO CART</button>
+                        <hr/>
+                        <div className='details-description' >
+                          <p>{this.state.product.description}</p>
+                        </div>
+                        <hr/>
+                    </div>
+                </div>
+        </div>
       </div>
     )
   }

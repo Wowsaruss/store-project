@@ -10,14 +10,12 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-// Massive connection
+// Massive database connection
 
 massive(process.env.CONNECTION_STRING)
 .then( db => {
     app.set('db', db)
 })
-
-// database
 
 // endpoints
 

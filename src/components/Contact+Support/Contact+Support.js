@@ -13,8 +13,9 @@ class ContactSupport extends Component {
           <h1 className='logo-font' >COPPER BLOOM</h1>
           </Link>
         </div>
-        <div>
+        <div className='sizing-parent' >
             <h2>QUESTIONS? WE CAN HELP.</h2>
+            <hr />
             <h4>-For all general inquiries, call us at 623-693-3758 or email: info@copper-bloom.com</h4>
             <h4>For questions about collaborations, email: collaborations@opper-bloom.com</h4>
             <h4>Delivery questions? Click here</h4>

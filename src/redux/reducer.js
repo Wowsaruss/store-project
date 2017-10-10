@@ -19,7 +19,7 @@ export default function reducer(state=initialState, action) {
 
         case REMOVE_FROM_CART:
             let newArray = state.Cart.slice();
-            newArray.splice(action.index, 1);
+            newArray.splice(action.payload, 1);
             return Object.assign({}, state, {
                 Cart: newArray});
             

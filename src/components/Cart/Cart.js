@@ -41,7 +41,7 @@ class Cart extends Component {
                     <th>TOTAL</th>
                   </tr>
                   <tr>
-                    <td><img className='cart-image-style' src={product.imageurl} alt="" /></td>
+                    <td><Link to={`/details/${product.productid}`}><img className='cart-image-style' src={product.imageurl} alt="" /></Link></td>
                     <td><h4>{product.productname}</h4></td>
                     <td><h2>${product.productprice}</h2></td>
                     <td><select>

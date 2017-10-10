@@ -1,7 +1,5 @@
 .cart-image-style {
     width: 100px;
-    // position: absolute;
-    // clip: inherit;
 }
 .item-display {
     display: flex;
@@ -11,7 +9,6 @@
 	align-items: baseline;
 	align-content: stretch;
 }
-
 input[type=text] {
     width: 20px;
     padding: 10px 10px;
@@ -24,13 +21,6 @@ input[type=text] {
 }
 input[type=text]:focus {
     border: 3px solid #555;
-}
-.logo-font {
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Megrim', cursive;
-    font-size: 60px;
-    width: 200px;
 }
 .checkout-button {
     text-align: center;

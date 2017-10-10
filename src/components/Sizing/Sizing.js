@@ -13,8 +13,10 @@ class Sizing extends Component {
           <h1 className='logo-font' >COPPER BLOOM</h1>
           </Link>
         </div>
-        <div>
+
+        <div className='sizing-parent' >
           <h1>General Sizing:</h1>
+          <hr />
           <h4>Small: 0-4</h4>
           <h4>Medium: 4-8</h4>
           <h4>Large: 8-12</h4>

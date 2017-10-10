@@ -1,7 +1,7 @@
 
 .hero-props {
     font-family: 'Megrim', cursive;    
-    font-size: 60px;
+    font-size: 100px;
     color: #000000;
     padding: 0px;
     margin: 0px;
@@ -16,11 +16,12 @@
     background-size: cover;
 }
 .hero-text {
+    opacity: .8;
     position: absolute;
     text-align: center;
     padding: 0px;
     margin: 0px;
-    top: 40%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -47,13 +48,15 @@
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #000000;
+    background-color: #FFFFFF;
     font-family: 'Megrim', cursive;
 }
 .text {
+    text-align: center;
+    font-weight: bold;
     position: absolute;
     display: inline-block;
-    color: white;
+    color: #000000;
     font-size: 20px;
     top: 50%;
     left: 50%;
@@ -70,8 +73,10 @@
     width: 100%;
 }
 .product-flex {
+    padding: 0px;
+    margin: 50px;
     display: flex;
-	flex-direction: row;
+	flex-direction: row-reverse;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
