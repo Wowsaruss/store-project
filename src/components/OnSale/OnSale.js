@@ -12,6 +12,7 @@ class OnSale extends Component {
           <h1 className='logo-font' >COPPER BLOOM</h1>
           </Link>
         </div>
+        <h2 className='page-header' >ON SALE</h2>
         <hr/>
       </div>
     )

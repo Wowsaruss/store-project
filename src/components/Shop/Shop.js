@@ -61,6 +61,7 @@ componentDidMount() {
           <h1 className='logo-font' >COPPER BLOOM</h1>
           </Link>
         </div>
+        <h2 className='page-header' >SHOP</h2>
         <hr/>
         <div>
           <div className='product-flex' >{products}</div>

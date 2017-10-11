@@ -1,4 +1,4 @@
 INSERT INTO orders
-(shipname, billname, phonenumber, total, date)
+(shipname, billingname, phonenumber, total, date)
 VALUES
 ($1, $2, $3, $4, $5);

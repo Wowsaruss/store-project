@@ -21,18 +21,18 @@ class NavBar extends Component {
 
                     <div className='nav-bar' >
                         <div className='nav-link-bar'>
-                                <a><Link to='/shop' >SHOP</Link></a>
-                                <a><Link to='/newarrivals' >NEW ARRIVALS</Link></a>
-                                <a><Link to='/dresses'>DRESSES</Link></a>
-                                <a><Link to='/onsale'>ON SALE</Link></a>
-                                <a><Link to='/sizing'>SIZING</Link></a>
-                                <a><Link to='/contact+support' >CONTACT + SUPPORT</Link></a>  
+                                <Link to='/shop' >SHOP</Link>
+                                <Link to='/newarrivals' >NEW ARRIVALS</Link>
+                                <Link to='/dresses'>DRESSES</Link>
+                                <Link to='/onsale'>ON SALE</Link>
+                                <Link to='/sizing'>SIZING</Link>
+                                <Link to='/contact+support' >CONTACT + SUPPORT</Link>  
                         </div>
                         <hr/>
                    </div>
                    <div className='icon-position' >
                             <Link to='/account'><img className='user-icon' src={blackUser} alt='' /></Link>
-                            <Link to='/cart' ><img className='cart-icon' src={blackcart} alt='' /><span class="badge">(5)</span></Link>
+                            <Link to='/cart' ><img className='cart-icon' src={blackcart} alt='' /><span className="badge">(5)</span></Link>
                             <Link to='/search' ><img className='search-icon' src={blacksearch} alt='' /></Link> 
                    </div>
                 </div>

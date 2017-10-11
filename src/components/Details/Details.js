@@ -41,7 +41,7 @@ class Details extends Component {
                     </div>
                     <div>
                         <h2>${this.state.product.productprice}</h2>
-                        <button className='checkout' onClick={() => this.props.addToCart(this.state.product)} >ADD TO CART</button>
+                        <button className='checkout' onClick={(e) => this.props.addToCart(this.state.product)}>ADD TO CART</button>
                         <hr/>
                         <div className='details-description' >
                           <p>{this.state.product.description}</p>
