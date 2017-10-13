@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3080",
+  "main": "./server/index.js",
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.18.1",
