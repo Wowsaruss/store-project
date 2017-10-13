@@ -41,20 +41,34 @@ class Cart extends Component {
                     <th>TOTAL</th>
                   </tr>
                   <tr>
-                    <td><Link to={`/details/${product.productid}`}><img className='cart-image-style' src={product.imageurl} alt="" /></Link></td>
-                    <td><h4>{product.productname}</h4></td>
-                    <td><h2>${product.productprice}</h2></td>
-                    <td><select>
+                    <td>
+                      <Link to={`/details/${product.productid}`}><img className='cart-image-style' src={product.imageurl} alt="" /></Link>
+                    </td>
+                    <td>
+                      <h4>{product.productname}</h4>
+                    </td>
+                    <td>
+                      <h2>${product.productprice}</h2>
+                    </td>
+                    <td>
+                      <select>
                         <option>XS</option>
                         <option>S</option>
                         <option>M</option>
                         <option>L</option>
                         <option>XL</option>
                         <option>XXL</option>
-                    </select></td>
-                    <td><form><input type="number" name="quantity" min="1" placeholder='1' max="" /></form></td>
-                    <td><button onClick={() => this.props.removeFromCart(i)}>REMOVE</button></td>
-                    <td><h2>${product.productprice}</h2></td>
+                      </select>
+                    </td>
+                    <td>
+                      <form><input type="number" name="quantity" min="1" placeholder='1' max="" /></form>
+                    </td>
+                    <td>
+                      <button onClick={() => this.props.removeFromCart(i)}>REMOVE</button>
+                    </td>
+                    <td>
+                      <h2>${product.productprice}</h2>
+                    </td>
                   </tr>
          </table>
 
