@@ -13,7 +13,7 @@ class Sizing extends Component {
           </Link>
         </div>
 
-        <div className='sizing-parent' >
+        <div className='common-text sizing-parent' >
           <h1>General Sizing:</h1>
           <hr />
           <h4>Small: 0-4</h4>

@@ -5,6 +5,9 @@ body {
 ul {
   list-style-type: none; }
 
+.common-text {
+  font-family: "Marvel", sans-serif; }
+
 .cart-image-style {
   width: 100px; }
 
@@ -233,7 +236,7 @@ hr {
   margin: 0px; }
 
 .nav-bar {
-  background-color: #FFFFFF;
+  background-color: #e4dcd5;
   width: 100%;
   height: 30px; }
 

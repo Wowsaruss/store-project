@@ -23,17 +23,15 @@ componentDidMount() {
   render() {
     console.log(this.state);
     const arrival = this.state.newArrivals.map(function(newArrivals, i) {
-      console.log(arrival);
     return (
               <div key={i}>
+                        <div className='container' >
 
- <div className='container' >
-
-                               <div className='divsize' >
+                              <div className='divsize' >
                                  <img className='imgsize' src={arrival.imageurl} alt='' />
-                               </div>
+                              </div>
 
-                               <div className='overlay' >
+                              <div className='overlay' >
                                    <Link to={`/details/${arrival.productid}`} >
                                      <div className='text' >
                                        <hr/>
@@ -42,12 +40,12 @@ componentDidMount() {
                                          ${arrival.productprice}
                                      </div>
                                    </Link>
-                               </div>
+                              </div>
 
                         </div>
               </div>
-              )
-            })
+              );
+          });
 
             return (
               <div>
@@ -62,7 +60,7 @@ componentDidMount() {
                   {<div className='product-flex' >{arrival}</div>}
                 </div>
               </div>
-            )
+            );
           }
         }
 

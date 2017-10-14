@@ -13,7 +13,7 @@ class Account extends Component {
           </Link>
         </div>
         <div>
-          <h1>Account!</h1>
+          <h1 className='common-text' >Account!</h1>
         </div>
       </div>
     )

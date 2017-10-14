@@ -19,7 +19,7 @@ class NavBar extends Component {
                 <div>
 
                     <div className='nav-bar' >
-                        <div className='nav-link-bar'>
+                        <div className='nav-link-bar common-text'>
                                 <Link to='/shop' >SHOP</Link>
                                 <Link to='/newarrivals' >NEW ARRIVALS</Link>
                                 <Link to='/dresses'>DRESSES</Link>

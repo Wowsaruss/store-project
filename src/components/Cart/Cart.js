@@ -36,7 +36,7 @@ class Cart extends Component {
       <div key={i} className='item-display' >
         
 
-         <table>
+         <table className='common-font' >
                   <tr>
                     <th>PRODUCT</th>
                     <th></th>
@@ -73,7 +73,7 @@ class Cart extends Component {
                       <button onClick={(e) => this.props.removeFromCart(product.productid)}>REMOVE</button>
                     </td>
                     <td>
-                      <h2>${product.productprice}</h2>
+                      <h2 className='common-font' >${product.productprice}</h2>
                     </td>
                   </tr>
          </table>
@@ -93,7 +93,7 @@ class Cart extends Component {
                 ?
                 shoppingCartDisplay
                 : 
-                <div className='empty-cart' >
+                <div className='common-text empty-cart' >
                   <h1>Your shopping cart is empty!  Go add something!</h1>
                 </div>
                 }
@@ -114,7 +114,6 @@ class Cart extends Component {
 }
 
 function mapStateToProps(state) {
-  // console.log(state)
   return {
       Cart: state.Cart
   };

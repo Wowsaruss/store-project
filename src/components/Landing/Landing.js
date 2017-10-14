@@ -56,7 +56,7 @@ componentDidMount() {
                   <div className='hero-props bg' >
                     
                         <h1 className='hero-text'>COPPER BLOOM</h1>
-                        
+
                         <img className='hero-image' alt='' />
                   </div>
 
