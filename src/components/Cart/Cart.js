@@ -17,12 +17,20 @@ class Cart extends Component {
   }
 
   componentDidMount() {
-    axios.post('/api/submit_order').then(res => {
-      this.setState({
-        productList: res.data
-      })
-    })
+    // axios.post('/api/submit_order').then(res => {
+    //   this.setState({
+    //     productList: res.data
+    //   })
+    // })
   }
+
+  // deleteItem(productId) {
+  //   axios.delete(`/api/cart/${productId}`).then((myOrder) => {
+  //     this.setState({
+  //       order: myOrder.data
+  //     });
+  //   });
+  // }
 
   render() {
     let shoppingCartDisplay = this.props.Cart.map((product, i) => {
@@ -64,7 +72,7 @@ class Cart extends Component {
                       <form><input type="number" name="quantity" min="1" placeholder='1' max="" /></form>
                     </td>
                     <td>
-                      <button onClick={() => this.props.removeFromCart(i)}>REMOVE</button>
+                      <button onClick={(e) => this.props.removeFromCart(product.productid)}>REMOVE</button>
                     </td>
                     <td>
                       <h2>${product.productprice}</h2>
@@ -83,13 +91,21 @@ class Cart extends Component {
                     <h1 className='logo-font' >COPPER BLOOM</h1>
                     </Link>
                   </div>
-                {shoppingCartDisplay[0] ? 
-                shoppingCartDisplay: 
+                {shoppingCartDisplay[0]
+                ?
+                shoppingCartDisplay
+                : 
                 <div className='empty-cart' >
                   <h1>Your shopping cart is empty!  Go add something!</h1>
                 </div>
                 }
                 <hr />
+
+                {this.props.Cart.reduce((sum, item) => {
+                  return sum + (item.productprice * item.qty)
+                },0)
+                }
+
                 <div className='checkout-button' >
                   <button className='checkout' >UPDATE</button>
                   <button className='checkout' >CHECKOUT</button>

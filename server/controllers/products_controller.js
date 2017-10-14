@@ -14,6 +14,12 @@ module.exports = {
         req.app.get('db').get_product([req.params.productid]).then(product => {
             res.send(product[0]);
         }).catch((err) => {console.log(err)})
+    },
+    newArrivals: (req, res) => {
+        req.app.get('db').new_arrivals().then(products => {
+            // console.log(products);
+            res.status(200).send(products);
+        }).catch((err) => {console.log(err)})
     }
 
 }

@@ -52,8 +52,11 @@ massive(process.env.CONNECTION_STRING)
 app.get('/api/dresses', products_controller.dresses);
 app.get('/api/home_products', products_controller.getProducts);
 app.get('/api/product_details/:productid', products_controller.productDetails);
+app.get('/api/new_arrivals', products_controller.newArrivals);
 // POST
 app.post('/api/cart', cart_controller.addToCart);
+// DELETE
+app.delete('/api/cart/:id/:userid', cart_controller.deleteItems);
 
 
 // Port

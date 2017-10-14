@@ -22,28 +22,30 @@ componentDidMount() {
 }
 
   render() {
-    const newArrival = this.state.newArrivals.map(function(newArrivals, i) {
+    console.log(this.state);
+    const arrival = this.state.newArrivals.map(function(newArrivals, i) {
+      console.log(arrival);
     return (
               <div key={i}>
 
-<div className='container' >
+ <div className='container' >
 
-                              <div className='divsize' >
-                                <img className='imgsize' src={newArrival.imageurl} alt='' />
-                              </div>
+                               <div className='divsize' >
+                                 <img className='imgsize' src={arrival.imageurl} alt='' />
+                               </div>
 
-                              <div className='overlay' >
-                                  <Link to={`/details/${newArrival.productid}`} >
-                                    <div className='text' >
-                                      <hr/>
-                                        {newArrival.productname}<br />
-                                      <hr/>
-                                        ${newArrival.productprice}
-                                    </div>
-                                  </Link>
-                              </div>
+                               <div className='overlay' >
+                                   <Link to={`/details/${arrival.productid}`} >
+                                     <div className='text' >
+                                       <hr/>
+                                         {arrival.productname}<br />
+                                       <hr/>
+                                         ${arrival.productprice}
+                                     </div>
+                                   </Link>
+                               </div>
 
-                       </div>
+                        </div>
               </div>
               )
             })
@@ -58,7 +60,7 @@ componentDidMount() {
                 <h2 className='page-header' >NEW ARRIVALS</h2>
                 <hr/>
                 <div>
-                  <div className='product-flex' >{newArrival}</div>
+                  {<div className='product-flex' >{arrival}</div>}
                 </div>
               </div>
             )

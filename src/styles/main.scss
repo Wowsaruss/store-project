@@ -1,0 +1,16 @@
+@import 'reset';
+@import 'mixins';
+@import 'variables';
+@import 'global';
+
+@import './components/_account.scss';
+@import './components/_cart.scss';
+@import './components/_contact+support.scss';
+@import './components/_details.scss';
+@import './components/_dresses.scss';
+@import './components/_footer.scss';
+@import './components/_landing.scss';
+@import './components/_navbar.scss';
+@import './components/_newArrivals.scss';
+@import './components/_onSale.scss';
+@import './components/_shop.scss';

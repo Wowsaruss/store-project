@@ -11,7 +11,7 @@ module.exports = {
         })
     },
 
-    addToCart:(req,res) => {
+    addToCart:(req, res) => {
         const db = req.app.get('db');
         const {userid, productid} = req.body;
         db.get_cart([userid]).then((cart) => {
@@ -23,7 +23,6 @@ module.exports = {
                      db.return_cart([cart[0].id]).then((cartItems) => {
                          res.send(cartItems)
                      })
-                       
                     })
                     console.log("duplicate!")
                 } else {
@@ -45,6 +44,17 @@ module.exports = {
                     })
                 })
             } 
+        })
+    },
+
+    deleteItems:(req, res) => {
+            req.app.get('db').get_cart([req.params.userid]).then((order) => {
+                console.log(order[0].id, req.params.id);
+            req.app.get('db').delete_item([req.params.id, order[0].id]).then(() => {
+                req.app.get('db').return_cart([order[0].id]).then((cartItems) => {
+                    res.status(200).send(cartItems);
+                })
+            })
         })
     }
 }
