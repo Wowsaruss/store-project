@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
-import './NavBar.css';
 import blacksearch from '../../Assets/black-search.png';
 import blackcart from '../../Assets/black-cart.png';
 import blackUser from '../../Assets/blackUser.png';

@@ -4,8 +4,6 @@ import {removeFromCart} from '../../redux/reducer';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
-import './Cart.css';
-
 
 class Cart extends Component {
   constructor(props) {

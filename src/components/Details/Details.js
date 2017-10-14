@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import {addToCart} from '../../redux/reducer';
 import {Link} from 'react-router-dom';
 
-import './Details.css';
 
 class Details extends Component {
   constructor(props) {

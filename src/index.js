@@ -6,7 +6,7 @@ import store from './redux/store';
 import {HashRouter} from 'react-router-dom';
 
 import './styles/main.css';
-import './index.css';
+
 
 ReactDOM.render(
     <Provider store={store}>

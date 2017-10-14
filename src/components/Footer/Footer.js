@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
-import './Footer.css';
 import facebook from '../../Assets/facebook.svg';
 import instagram from '../../Assets/instagram.svg';
 import pinterest from '../../Assets/pinterest.svg';

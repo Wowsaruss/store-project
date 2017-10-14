@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
-import './Dresses.css';
 
 class Dresses extends Component {
   constructor(props) {

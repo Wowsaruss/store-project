@@ -14,8 +14,6 @@ import NewArrivals from './components/NewArrivals/NewArrivals';
 import OnSale from './components/OnSale/OnSale';
 import Sizing from './components/Sizing/Sizing';
 
-import './App.css';
-
 
 class App extends Component {
   render() {

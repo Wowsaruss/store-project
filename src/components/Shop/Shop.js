@@ -3,8 +3,6 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 
 
-import './Shop.css';
-
 class Shop extends Component {
   constructor(props) {
     super(props)

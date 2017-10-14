@@ -1,0 +1,35 @@
+.outer-div {
+    margin: 40px;
+  }
+  .div-align {
+    display: flex;
+  
+  }
+  .product-detail-title {
+    padding: 20px;
+    padding-left: 50px;
+    margin: 0px;
+  }
+  
+  hr {
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  .detail-image-style{
+      width: 400px;
+      margin: 50px;
+      margin-top: 30px;
+  }
+  
+  .details-description {
+    width: 500px;
+    margin: 0px;
+    padding: 30px;
+  }
+  
+  @media (max-width: 568px) {
+     .detail-image-style {
+       width: 280px;
+     }
+  }

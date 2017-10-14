@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
-import './Contact+Support.css';
 
 class ContactSupport extends Component {
   render() {
