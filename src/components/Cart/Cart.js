@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {removeFromCart} from '../../redux/reducer';
 import {Link} from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 class Cart extends Component {
@@ -36,7 +36,7 @@ class Cart extends Component {
       <div key={i} className='item-display' >
         
 
-         <table className='common-font' >
+         <div className='common-font' >
 
                   <div className='cart-display' >
                         <div>
@@ -74,7 +74,7 @@ class Cart extends Component {
                           <h2 className='common-font' >${product.productprice}</h2>
                         </div>
                   </div>
-         </table>
+         </div>
 
 
       </div>
@@ -90,7 +90,7 @@ class Cart extends Component {
 
                   <div className='cart-display common-text' >
                     <div><h2>PRODUCT</h2></div>
-                    <div><h2></h2></div>
+                    <div><h2> </h2></div>
                     <div><h2>PRICE</h2></div>
                     <div><h2>SIZE</h2></div>
                     <div><h2>QTY</h2></div>
