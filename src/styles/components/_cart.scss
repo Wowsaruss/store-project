@@ -39,3 +39,16 @@ input[type=text]:focus {
 input {
     width: 30px;
 }
+.total {
+    @include flexSetUp(flex-start, center, column);
+}
+.cart-display {
+    @include flexSetUp(center, center, row);
+    div {
+        padding: 10px 10px;
+        @include width-height(130px, auto);
+    }
+    h2 {
+        margin-bottom: 5px;
+    }
+}

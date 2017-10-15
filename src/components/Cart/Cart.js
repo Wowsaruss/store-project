@@ -37,45 +37,43 @@ class Cart extends Component {
         
 
          <table className='common-font' >
-                  <tr>
-                    <th>PRODUCT</th>
-                    <th></th>
-                    <th>PRICE</th>
-                    <th>SIZE</th>
-                    <th>QTY</th>
-                    <th>REMOVE</th>
-                    <th>TOTAL</th>
-                  </tr>
-                  <tr>
-                    <td>
-                      <Link to={`/details/${product.productid}`}><img className='cart-image-style' src={product.imageurl} alt="" /></Link>
-                    </td>
-                    <td>
-                      <h4>{product.productname}</h4>
-                    </td>
-                    <td>
-                      <h2>${product.productprice}</h2>
-                    </td>
-                    <td>
-                      <select>
-                        <option>XS</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
-                        <option>XXL</option>
-                      </select>
-                    </td>
-                    <td>
-                      <form><input type="number" name="quantity" min="1" placeholder='1' max="" /></form>
-                    </td>
-                    <td>
-                      <button onClick={(e) => this.props.removeFromCart(product.productid)}>REMOVE</button>
-                    </td>
-                    <td>
-                      <h2 className='common-font' >${product.productprice}</h2>
-                    </td>
-                  </tr>
+
+                  <div className='cart-display' >
+                        <div>
+                          <Link to={`/details/${product.productid}`}><img className='cart-image-style' src={product.imageurl} alt="" /></Link>
+                        </div>
+
+                        <div>
+                          <h4>{product.productname}</h4>
+                        </div>
+
+                        <div>
+                          <h2>${product.productprice}</h2>
+                        </div>
+
+                        <div>
+                          <select>
+                            <option>XS</option>
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                            <option>XXL</option>
+                          </select>
+                        </div>
+
+                        <div>
+                          <form><input type="number" name="quantity" min="1" placeholder='1' max="" /></form>
+                        </div>
+
+                        <div>
+                          <button onClick={(e) => this.props.removeFromCart(product.productid)}>REMOVE</button>
+                        </div>
+
+                        <div>
+                          <h2 className='common-font' >${product.productprice}</h2>
+                        </div>
+                  </div>
          </table>
 
 
@@ -89,25 +87,44 @@ class Cart extends Component {
                     <h1 className='logo-font' >COPPER BLOOM</h1>
                     </Link>
                   </div>
-                {shoppingCartDisplay[0]
-                ?
-                shoppingCartDisplay
-                : 
-                <div className='common-text empty-cart' >
-                  <h1>Your shopping cart is empty!  Go add something!</h1>
-                </div>
-                }
-                <hr />
 
-                {this.props.Cart.reduce((sum, item) => {
-                  return sum + (item.productprice * item.qty)
-                },0)
-                }
+                  <div className='cart-display common-text' >
+                    <div><h2>PRODUCT</h2></div>
+                    <div><h2></h2></div>
+                    <div><h2>PRICE</h2></div>
+                    <div><h2>SIZE</h2></div>
+                    <div><h2>QTY</h2></div>
+                    <div><h2>REMOVE</h2></div>
+                    <div><h2>TOTAL</h2></div>
+                  </div>
 
-                <div className='checkout-button' >
-                  <button className='checkout' >UPDATE</button>
-                  <button className='checkout' >CHECKOUT</button>
-                </div>
+                  <hr />
+
+                  {shoppingCartDisplay[0]
+                  ?
+                  shoppingCartDisplay
+                  : 
+                  <div className='common-text empty-cart' >
+                    <h1>Your shopping cart is empty!  Go add something!</h1>
+                  </div>}
+
+                  <hr />
+
+                  <div className='total common-text' >
+                    <h2>SUBTOTAL: ${this.props.Cart.reduce((sum, item) => {
+                      return sum + (item.productprice * item.qty)
+                    },0.00)
+                    }</h2>
+                    <h1>TOTAL: ${this.props.Cart.reduce((sum, item) => {
+                      return sum + (item.productprice * item.qty)
+                    },0.00)
+                    }</h1>
+                  </div>
+
+                  <div className='checkout-button common-text' >
+                    <button className='checkout' >UPDATE</button>
+                    <button className='checkout' >CHECKOUT</button>
+                  </div>
          </div>
     )
   }

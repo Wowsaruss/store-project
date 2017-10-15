@@ -30,9 +30,9 @@ class NavBar extends Component {
                         <hr/>
                    </div>
                    <div className='icon-position' >
+                            <Link to='/search' ><img className='search-icon' src={blacksearch} alt='' /></Link>
                             <Link to='/account'><img className='user-icon' src={blackUser} alt='' /></Link>
                             <Link to='/cart' ><img className='cart-icon' src={blackcart} alt='' /><span className="badge">(5)</span></Link>
-                            <Link to='/search' ><img className='search-icon' src={blacksearch} alt='' /></Link> 
                    </div>
                 </div>
             </div>
