@@ -6,7 +6,9 @@ const cors = require('cors')
     , express = require('express')
     , bodyParser = require('body-parser')
     , massive = require('massive')
-    , session = require('express-session');
+    , session = require('express-session')
+    , passport = require('passport')
+    , Auth0Strategy = require('passport-auth0');
 const app = express();
 const port  =  3080;
 
@@ -17,6 +19,8 @@ const products_controller = require('./controllers/products_controller');
 // cors / body-parser
 app.use(bodyParser.json());
 app.use(cors());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Massive database connection
 massive(process.env.CONNECTION_STRING)
@@ -47,6 +51,58 @@ massive(process.env.CONNECTION_STRING)
 //         res.send(product[0]);
 //     }).catch((err) => {console.log(err)})
 // })
+
+// beginning
+
+passport.use( new Auth0Strategy({
+    domain: process.env.AUTH_DOMAIN,
+    clientID: process.env.AUTH_CLIENT_ID,
+    clientSecret: process.env.AUTH_CLIENT_SECRET,
+    callbackURL: process.env.AUTH_CALLBACK
+  }, function(accessToken, refreshToken, extraParams, profile, done) {
+    const db = app.get('db');
+        db.get_user([profile.identities[0].user_id]).then( user => {
+            if (user[0]) {
+                done(null, user[0].id)
+            } else {
+                db.create_user([
+                    profile.emails[0].value,
+                    profile.identities[0].user_id]).then( user => {
+                        done(null, user[0].id)
+                    })
+            }})
+      }))
+
+passport.serializeUser(function(userId, done) {
+    done(null, userId);
+})
+passport.deserializeUser( function( userId, done) {
+    app.get('db').current_user(userId).then(user => {
+            done(null, user[0])
+    })
+})
+app.get('/auth', passport.authenticate('auth0'));
+app.get('/auth/callback', passport.authenticate('auth0',{
+    successRedirect: 'http://localhost:3000/#/',
+    failureRedirect: '/auth'
+}))
+
+app.get('/auth/logout', (req,res) => {
+    req.logOut();
+    res.redirect(302, 'https://russhayes.auth0.com/v2/logout?returnTo=http%3A%2F%2Flocalhost%3A3000%2F&client_id=H1mIr30Ql159cjDXYPz8LXFwzFpqifnG')
+})
+
+app.get('/api/user',  passport.authenticate('auth0'), (req, res) => {
+    req.app.get('db').current_user().then(user =>{
+        res.status(200).send(user)
+    }).catch((err) => {console.log(err)})
+})
+
+// end
+
+
+
+
 
 // GET
 app.get('/api/dresses', products_controller.dresses);

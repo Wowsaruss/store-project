@@ -7,6 +7,7 @@ import {HashRouter} from 'react-router-dom';
 
 import './styles/main.css';
 
+  
 
 ReactDOM.render(
     <Provider store={store}>

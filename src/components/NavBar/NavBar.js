@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import blacksearch from '../../Assets/black-search.png';
 import blackcart from '../../Assets/black-cart.png';
 import blackUser from '../../Assets/blackUser.png';
+import {connect} from 'react-redux';
 
 class NavBar extends Component {
     constructor() {
@@ -32,11 +33,31 @@ class NavBar extends Component {
                    <div className='icon-position' >
                             <Link to='/search' ><img className='search-icon' src={blacksearch} alt='' /></Link>
                             <Link to='/account'><img className='user-icon' src={blackUser} alt='' /></Link>
-                            <Link to='/cart' ><img className='cart-icon' src={blackcart} alt='' /><span className="badge">(5)</span></Link>
+                            <Link to='/cart' ><img className='cart-icon' src={blackcart} alt='' />
+                            <div className='badge' >
+                                ({
+                                    this.props.Cart.reduce((sum, item) => {
+                                        return sum + (item.qty)
+                                    },0)
+                                })
+                            </div>
+                            </Link>
                    </div>
+
+                    <a className='auth0' href={'http://localhost:3080/auth' }>
+                        <button> Sign in or Sign up </button> </a>
+                    <a href={'http://localhost:3080/auth/logout'}><button> Logout </button></a>
+
                 </div>
             </div>
         )
     }    
 }
-export default NavBar;
+
+function mapStateToProps(state) {
+    return {
+        Cart: state.Cart
+    }
+}
+
+export default connect(mapStateToProps)(NavBar);
