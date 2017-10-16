@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {removeFromCart} from '../../redux/reducer';
 import {Link} from 'react-router-dom';
+import Trash from '../../Assets/Trash.png';
 // import axios from 'axios';
 
 
@@ -67,6 +68,7 @@ class Cart extends Component {
                         </div>
 
                         <div>
+                          <img src={Trash} alt='' />
                           <button onClick={(e) => this.props.removeFromCart(product.productid)}>REMOVE</button>
                         </div>
 
