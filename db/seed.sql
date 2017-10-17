@@ -122,8 +122,8 @@ values (
 
 
 -- new users table
-create table users (
-    id
-    emain
-    auth_id
-)
+alter table users
+add column auth_id text;
+
+alter table users
+drop column auth_id;

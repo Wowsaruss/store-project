@@ -3,7 +3,9 @@ import {connect} from 'react-redux';
 import {removeFromCart} from '../../redux/reducer';
 import {Link} from 'react-router-dom';
 import Trash from '../../Assets/Trash.png';
-// import axios from 'axios';
+import StripeCheckout from 'react-stripe-checkout';
+import stripe from './stripeKey';
+import axios from 'axios';
 
 
 class Cart extends Component {
@@ -13,15 +15,16 @@ class Cart extends Component {
     this.state = {
       order: []
     }
+    this.onToken=this.onToken.bind(this);
   }
 
-  componentDidMount() {
-    // axios.post('/api/submit_order').then(res => {
-    //   this.setState({
-    //     productList: res.data
-    //   })
-    // })
-  }
+  // componentDidMount() {
+  //   axios.post('/api/submit_order').then(res => {
+  //     this.setState({
+  //       productList: res.data
+  //     })
+  //   })
+  // }
 
   // deleteItem(productId) {
   //   axios.delete(`/api/cart/${productId}`).then((myOrder) => {
@@ -31,7 +34,20 @@ class Cart extends Component {
   //   });
   // }
 
+
+  onToken(token) {
+    token.card = void 0;
+    console.log('token', this.state);
+    axios.post('/api/payment', { token, amount: 0.00, options: this.state} ).then(response => {
+      alert('we are in business')
+    });
+  }
+
   render() {
+    const subtotal = this.props.Cart.reduce((sum, item) => {
+      return sum + (item.productprice * item.qty);
+    },0.00)
+    const total = (subtotal * .085) + subtotal;
     let shoppingCartDisplay = this.props.Cart.map((product, i) => {
     return (
       <div key={i} className='item-display' >
@@ -68,8 +84,7 @@ class Cart extends Component {
                         </div>
 
                         <div>
-                          <img src={Trash} alt='' />
-                          <button onClick={(e) => this.props.removeFromCart(product.productid)}>REMOVE</button>
+                          <a onClick={(e) => this.props.removeFromCart(product.productid)}><img className='cart-trash' src={Trash} alt='' /></a>
                         </div>
 
                         <div>
@@ -112,20 +127,29 @@ class Cart extends Component {
 
                   <hr />
 
+                  
+
                   <div className='total common-text' >
-                    <h2>SUBTOTAL: ${this.props.Cart.reduce((sum, item) => {
-                      return sum + (item.productprice * item.qty)
-                    },0.00)
-                    }</h2>
-                    <h1>TOTAL: ${this.props.Cart.reduce((sum, item) => {
-                      return sum + (item.productprice * item.qty)
-                    },0.00)
-                    }</h1>
+                    <h2>SUBTOTAL: ${subtotal}</h2>
+                    <h1>TOTAL: ${total}</h1>
                   </div>
 
                   <div className='checkout-button common-text' >
                     <button className='checkout' >UPDATE</button>
                     <button className='checkout' >CHECKOUT</button>
+                  </div>
+
+                  <div className='logout-button' >
+                      <a href={'http://localhost:3080/auth'}><button className='login-button'>LOGIN // REGISTER</button></a>
+                  </div>
+
+
+                  <div >
+                      <StripeCheckout
+                          token={this.onToken}
+                          stripeKey={ stripe }
+                          amount={total * 100}
+                      />
                   </div>
          </div>
     )

@@ -22,6 +22,10 @@ input[type=text] {
 input[type=text]:focus {
     border: 3px solid #555;
 }
+.cart-trash {
+    @include width-height(20px, auto);
+    cursor: pointer;
+}
 .checkout-button {
     text-align: center;
 }
@@ -32,6 +36,15 @@ input[type=text]:focus {
     width: 100px;
     background-color: black;
     color: white;
+    cursor: pointer;
+}
+.login-button {
+    padding: 0px;
+    margin: 0px;
+    @include width-height(150px, 40px);
+    background-color: black;
+    color: white;
+    cursor: pointer;
 }
 .empty-cart {
     text-align: center;

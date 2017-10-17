@@ -8,7 +8,8 @@ const cors = require('cors')
     , massive = require('massive')
     , session = require('express-session')
     , passport = require('passport')
-    , Auth0Strategy = require('passport-auth0');
+    , Auth0Strategy = require('passport-auth0')
+    , stripe = require('stripe')('sk_test_przub5PqVr90sNf3407X6OLM');
 const app = express();
 const port  =  3080;
 
@@ -28,32 +29,8 @@ massive(process.env.CONNECTION_STRING)
     app.set('db', db)
 })
 
-
-// ENDPOINTS
-// GET
-// app.get('/api/home_products', (req, res) => {
-//     req.app.get('db').get_products().then(products => {
-//         res.status(200).send(products);
-//     }).catch((err) => {console.log(err)})
-// })
-// app.get('/api/dresses', (req, res) => {
-//     req.app.get('db').get_dresses().then(products => {
-//         res.status(200).send(products);
-//     }).catch((err) => {console.log(err)})
-// })
-// app.get('/api/new_arrivals', (req, res) => {
-//     req.app.get('db').new_arrivals().then(products => {
-//         res.status(200).send(products);
-//     }).catch((err) => {console.log(err)})
-// })
-// app.get('/api/product_details/:productid', (req, res) => {
-//     req.app.get('db').get_product([req.params.productid]).then(product => {
-//         res.send(product[0]);
-//     }).catch((err) => {console.log(err)})
-// })
-
+// AUTH0
 // beginning
-
 passport.use( new Auth0Strategy({
     domain: process.env.AUTH_DOMAIN,
     clientID: process.env.AUTH_CLIENT_ID,
@@ -72,7 +49,6 @@ passport.use( new Auth0Strategy({
                     })
             }})
       }))
-
 passport.serializeUser(function(userId, done) {
     done(null, userId);
 })
@@ -83,23 +59,56 @@ passport.deserializeUser( function( userId, done) {
 })
 app.get('/auth', passport.authenticate('auth0'));
 app.get('/auth/callback', passport.authenticate('auth0',{
-    successRedirect: 'http://localhost:3000/#/',
+    successRedirect: 'http://localhost:3000/#/account',
     failureRedirect: '/auth'
 }))
-
 app.get('/auth/logout', (req,res) => {
     req.logOut();
     res.redirect(302, 'https://russhayes.auth0.com/v2/logout?returnTo=http%3A%2F%2Flocalhost%3A3000%2F&client_id=H1mIr30Ql159cjDXYPz8LXFwzFpqifnG')
 })
-
 app.get('/api/user',  passport.authenticate('auth0'), (req, res) => {
     req.app.get('db').current_user().then(user =>{
         res.status(200).send(user)
     }).catch((err) => {console.log(err)})
 })
-
 // end
 
+
+
+// STRIPE
+// Beginning
+app.post('/api/payment', function (req, res, next) {
+console.log('yup this is it', req.body)
+const amountArray = req.body.amount.toString().split('');
+const pennies = [];
+for (var i = 0; i < amountArray.length; i++) {
+  if (amountArray[i] === ".") {
+    if (typeof amountArray[i + 1] === "string") {
+      pennies.push(amountArray[i + 1]);
+    } else {
+      pennies.push("0");
+    }
+    if (typeof amountArray[i + 2] === "string") {
+      pennies.push(amountArray[i + 2]);
+    } else {
+      pennies.push("0");
+    }
+    break;
+  } else {
+    pennies.push(amountArray[i])
+  }
+}
+const convertedAmt = parseInt(pennies.join(''));
+const charge = stripe.charges.create({
+  amount: convertedAmt, // amount in cents, again
+  currency: 'usd',
+  source: req.body.token.id,
+  description: 'Test charge from react app'
+}, function (err, charge) {
+  if (err) return res.sendStatus(500)
+});
+});
+  // End
 
 
 

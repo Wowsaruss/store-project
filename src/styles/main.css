@@ -8,6 +8,9 @@ ul {
 .common-text {
   font-family: "Marvel", sans-serif; }
 
+.logout-button {
+  text-align: center; }
+
 .cart-image-style {
   width: 100px; }
 
@@ -32,6 +35,11 @@ input[type=text] {
 input[type=text]:focus {
   border: 3px solid #555; }
 
+.cart-trash {
+  width: 20px;
+  height: auto;
+  cursor: pointer; }
+
 .checkout-button {
   text-align: center; }
 
@@ -41,7 +49,17 @@ input[type=text]:focus {
   height: 40px;
   width: 100px;
   background-color: black;
-  color: white; }
+  color: white;
+  cursor: pointer; }
+
+.login-button {
+  padding: 0px;
+  margin: 0px;
+  width: 150px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  cursor: pointer; }
 
 .empty-cart {
   text-align: center; }

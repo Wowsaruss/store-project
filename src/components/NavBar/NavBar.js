@@ -31,8 +31,12 @@ class NavBar extends Component {
                         <hr/>
                    </div>
                    <div className='icon-position' >
-                            <Link to='/search' ><img className='search-icon' src={blacksearch} alt='' /></Link>
-                            <Link to='/account'><img className='user-icon' src={blackUser} alt='' /></Link>
+                            <Link to='/search' ><img className='search-icon' src={blacksearch} alt='' /></Link>                           
+
+                            {/* <a  href={'http://localhost:3080/auth'}>
+                        <button>LOGIN || REGISTER</button></a> */}
+                        <a  href={'http://localhost:3080/auth'}><img className='user-icon' src={blackUser} alt='' /></a>
+                            {/* <Link to='/account'><img className='user-icon' src={blackUser} alt='' /></Link> */}
                             <Link to='/cart' ><img className='cart-icon' src={blackcart} alt='' />
                             <div className='badge' >
                                 ({
@@ -43,10 +47,6 @@ class NavBar extends Component {
                             </div>
                             </Link>
                    </div>
-
-                    <a className='auth0' href={'http://localhost:3080/auth' }>
-                        <button> Sign in or Sign up </button> </a>
-                    <a href={'http://localhost:3080/auth/logout'}><button> Logout </button></a>
 
                 </div>
             </div>

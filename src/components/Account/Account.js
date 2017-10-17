@@ -13,7 +13,11 @@ class Account extends Component {
           </Link>
         </div>
         <div>
-          <h1 className='common-text' >Account!</h1>
+          <h1 className='page-header common-text' >ACCOUNT</h1>
+        </div>
+        <hr />
+        <div className='logout-button' >
+            <a href={'http://localhost:3080/auth/logout'}><button className='checkout'>LOGOUT</button></a>
         </div>
       </div>
     )
