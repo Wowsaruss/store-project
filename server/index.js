@@ -22,6 +22,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(express.static('build'))
 
 // Massive database connection
 massive(process.env.CONNECTION_STRING)
@@ -59,12 +60,12 @@ passport.deserializeUser( function( userId, done) {
 })
 app.get('/auth', passport.authenticate('auth0'));
 app.get('/auth/callback', passport.authenticate('auth0',{
-    successRedirect: 'http://localhost:3000/#/account',
+    successRedirect: 'http://localhost:3080/#/account',
     failureRedirect: '/auth'
 }))
 app.get('/auth/logout', (req,res) => {
     req.logOut();
-    res.redirect(302, 'https://russhayes.auth0.com/v2/logout?returnTo=http%3A%2F%2Flocalhost%3A3000%2F&client_id=H1mIr30Ql159cjDXYPz8LXFwzFpqifnG')
+    res.redirect(302, 'https://russhayes.auth0.com/v2/logout?returnTo=http%3A%2F%2Flocalhost%3A3080%2F&client_id=H1mIr30Ql159cjDXYPz8LXFwzFpqifnG')
 })
 app.get('/api/user',  passport.authenticate('auth0'), (req, res) => {
     req.app.get('db').current_user().then(user =>{

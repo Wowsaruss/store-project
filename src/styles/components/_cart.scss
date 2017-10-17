@@ -46,6 +46,22 @@ input[type=text]:focus {
     color: white;
     cursor: pointer;
 }
+.pay-with-card {
+    position: absolute;
+    top: 550px;
+    text-align: center;
+    padding: 0px;
+    margin: 20px;
+    height: 40px;
+    width: 100px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+}
+.stripe-checkout {
+    @include flexSetUp(center, center)
+}
 .empty-cart {
     text-align: center;
 }

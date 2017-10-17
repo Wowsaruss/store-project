@@ -4,7 +4,6 @@ import {removeFromCart} from '../../redux/reducer';
 import {Link} from 'react-router-dom';
 import Trash from '../../Assets/Trash.png';
 import StripeCheckout from 'react-stripe-checkout';
-import stripe from './stripeKey';
 import axios from 'axios';
 
 
@@ -143,14 +142,18 @@ class Cart extends Component {
                       <a href={'http://localhost:3080/auth'}><button className='login-button'>LOGIN // REGISTER</button></a>
                   </div>
 
-
-                  <div >
+                <div className='stripe-checkout' >
+                  <div className='pay-with-card'>
+                  </div>  
+                  <div>
                       <StripeCheckout
                           token={this.onToken}
-                          stripeKey={ stripe }
+                          stripeKey={ process.env.REACT_APP_STRIPEKEY }
                           amount={total * 100}
                       />
                   </div>
+                </div>
+
          </div>
     )
   }

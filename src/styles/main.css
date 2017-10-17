@@ -61,6 +61,25 @@ input[type=text]:focus {
   color: white;
   cursor: pointer; }
 
+.pay-with-card {
+  position: absolute;
+  top: 550px;
+  text-align: center;
+  padding: 0px;
+  margin: 20px;
+  height: 40px;
+  width: 100px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  z-index: 1; }
+
+.stripe-checkout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; }
+
 .empty-cart {
   text-align: center; }
 
@@ -164,7 +183,7 @@ hr {
 .footer {
   text-align: center;
   padding-top: 40px;
-  background: linear-gradient(#DEDEDE, #FFFFFF);
+  background: linear-gradient(#e1d7ce, #FFFFFF);
   height: 250px;
   list-style-type: none;
   bottom: 0;
@@ -272,7 +291,7 @@ hr {
   margin: 0px; }
 
 .nav-bar {
-  background-color: #e4dcd5;
+  background-color: #e1d7ce;
   width: 100%;
   height: 30px; }
 
@@ -313,7 +332,7 @@ a {
 .icon-position {
   position: absolute;
   top: 50px;
-  right: 20px; }
+  right: 35px; }
 
 .badge {
   position: absolute;
