@@ -9,7 +9,7 @@ const cors = require('cors')
     , session = require('express-session')
     , passport = require('passport')
     , Auth0Strategy = require('passport-auth0')
-    , stripe = require('stripe')('sk_test_przub5PqVr90sNf3407X6OLM');
+    , stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const app = express();
 const port  =  3080;
 
