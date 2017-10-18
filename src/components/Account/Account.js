@@ -17,7 +17,7 @@ class Account extends Component {
         </div>
         <hr />
         <div className='logout-button' >
-            <a href={`${process.env.HOST}/auth/logout`}><button className='checkout'>LOGOUT</button></a>
+            <a href={`${process.env.REACT_APP_HOST}/auth/logout`}><button className='checkout'>LOGOUT</button></a>
         </div>
       </div>
     )
