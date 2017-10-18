@@ -11,7 +11,7 @@ import './styles/main.css';
 
 ReactDOM.render(
     <Provider store={store}>
-        <HashRouter>
+        <HashRouter >
             <App />
         </HashRouter>
     </Provider>
