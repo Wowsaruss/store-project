@@ -65,7 +65,7 @@ app.get('/auth/callback', passport.authenticate('auth0',{
 }))
 app.get('/auth/logout', (req,res) => {
     req.logOut();
-    res.redirect(302, 'https://russhayes.auth0.com/v2/logout?returnTo=http%3A%2F%2Fcopperbloom.com%3A3080%2F&client_id=H1mIr30Ql159cjDXYPz8LXFwzFpqifnG')
+    res.redirect(302, process.env.AUTH_LOGOUT)
 })
 app.get('/api/user',  passport.authenticate('auth0'), (req, res) => {
     req.app.get('db').current_user().then(user =>{
