@@ -152,7 +152,7 @@ class Cart extends Component {
                           amount={total * 100}
                       />
                   </div>
-                {/* </div> */}
+                </div>
 
          </div>
     )
