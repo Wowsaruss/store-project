@@ -60,7 +60,7 @@ passport.deserializeUser( function( userId, done) {
 })
 app.get('/auth', passport.authenticate('auth0'));
 app.get('/auth/callback', passport.authenticate('auth0',{
-    successRedirect: `${process.env.HOST}/#/account`,
+    successRedirect: `${process.env.REACT_APP_HOST}/#/account`,
     failureRedirect: '/auth'
 }))
 app.get('/auth/logout', (req,res) => {

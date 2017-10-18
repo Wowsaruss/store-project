@@ -32,7 +32,7 @@ class NavBar extends Component {
                    </div>
                    <div className='icon-position' >
                             <Link to='/search' ><img className='search-icon' src={blacksearch} alt='' /></Link>                           
-                            <a href={`${process.env.HOST}/auth`}><img className='user-icon' src={blackUser} alt='' /></a>
+                            <a href={`${process.env.REACT_APP_HOST}/auth`}><img className='user-icon' src={blackUser} alt='' /></a>
                             <Link to='/cart' ><img className='cart-icon' src={blackcart} alt='' />
                     <div className='badge' >
                                 ({

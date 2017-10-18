@@ -139,12 +139,10 @@ class Cart extends Component {
                   </div>
 
                   <div className='logout-button' >
-                      <a href={`${process.env.HOST}/auth`}><button className='login-button'>LOGIN // REGISTER</button></a>
+                      <a href={`${process.env.REACT_APP_HOST}/auth`}><button className='login-button'>LOGIN // REGISTER</button></a>
                   </div>
 
                 <div className='stripe-checkout' >
-                  {/* <div className='pay-with-card'>
-                  </div>   */}
                   <div>
                       <StripeCheckout
                           token={this.onToken}
