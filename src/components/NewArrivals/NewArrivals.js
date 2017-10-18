@@ -13,7 +13,7 @@ class NewArrivals extends Component {
   }
 
 componentDidMount() {
-  axios.get('http://localhost:3000/api/new_arrivals').then(res => {
+  axios.get(`${process.env.HOST}/api/new_arrivals`).then(res => {
     this.setState({
       newArrivals: res.data
     })

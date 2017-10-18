@@ -139,7 +139,7 @@ class Cart extends Component {
                   </div>
 
                   <div className='logout-button' >
-                      <a href={'http://localhost:3080/auth'}><button className='login-button'>LOGIN // REGISTER</button></a>
+                      <a href={`${process.env.HOST}/auth`}><button className='login-button'>LOGIN // REGISTER</button></a>
                   </div>
 
                 <div className='stripe-checkout' >

@@ -17,7 +17,7 @@ class Account extends Component {
         </div>
         <hr />
         <div className='logout-button' >
-            <a href={'http://localhost:3080/auth/logout'}><button className='checkout'>LOGOUT</button></a>
+            <a href={`${process.env.HOST}/auth/logout`}><button className='checkout'>LOGOUT</button></a>
         </div>
       </div>
     )

@@ -13,7 +13,7 @@ class Shop extends Component {
   }
 
 componentDidMount() {
-  axios.get('http://localhost:3000/api/home_products').then(res => {
+  axios.get(`${process.env.HOST}/api/home_products`).then(res => {
     this.setState({
       productList: res.data
     })
