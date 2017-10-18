@@ -143,8 +143,8 @@ class Cart extends Component {
                   </div>
 
                 <div className='stripe-checkout' >
-                  <div className='pay-with-card'>
-                  </div>  
+                  {/* <div className='pay-with-card'>
+                  </div>   */}
                   <div>
                       <StripeCheckout
                           token={this.onToken}
@@ -152,7 +152,7 @@ class Cart extends Component {
                           amount={total * 100}
                       />
                   </div>
-                </div>
+                {/* </div> */}
 
          </div>
     )

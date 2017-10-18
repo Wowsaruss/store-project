@@ -25,8 +25,6 @@ export default function reducer(state=initialState, action) {
     console.log(action.payload)
         return Object.assign({}, state, {Cart:  action.payload});
     case REMOVE_FROM_CART + '_FULFILLED':
-        // let newArray = state.Cart.slice();
-        // newArray.splice(action.payload, 1);
         return Object.assign({}, state, {Cart: action.payload});
         default:
             return state;
