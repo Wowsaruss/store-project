@@ -17,8 +17,8 @@ module.exports = {
     },
     newArrivals: (req, res) => {
         req.app.get('db').new_arrivals().then(products => {
-            // console.log(products);
-            res.status(200).send(products);
+            res.json(products);
+            // res.status(200).send(products);
         }).catch((err) => {console.log(err)})
     }
 

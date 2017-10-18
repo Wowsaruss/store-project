@@ -13,7 +13,7 @@ class NewArrivals extends Component {
   }
 
 componentDidMount() {
-  axios.get(`${process.env.HOST}/api/new_arrivals`).then(res => {
+  axios.get('/api/new_arrivals').then(res => {
     this.setState({
       newArrivals: res.data
     })
@@ -28,16 +28,16 @@ componentDidMount() {
                         <div className='container' >
 
                               <div className='divsize' >
-                                 <img className='imgsize' src={arrival.imageurl} alt='' />
+                                 <img className='imgsize' src={newArrivals.imageurl} alt='' />
                               </div>
 
                               <div className='overlay' >
-                                   <Link to={`/details/${arrival.productid}`} >
+                                   <Link to={`/details/${newArrivals.productid}`} >
                                      <div className='text' >
                                        <hr/>
-                                         {arrival.productname}<br />
+                                         {newArrivals.productname}<br />
                                        <hr/>
-                                         ${arrival.productprice}
+                                         ${newArrivals.productprice}
                                      </div>
                                    </Link>
                               </div>
