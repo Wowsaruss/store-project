@@ -13,7 +13,7 @@ class Dresses extends Component {
   }
 
 componentDidMount() {
-  axios.get(`${process.env.HOST}/api/dresses`).then(res => {
+  axios.get('/api/dresses').then(res => {
     this.setState({
       dressesList: res.data
     })
