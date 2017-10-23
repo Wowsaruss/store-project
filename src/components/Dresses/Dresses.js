@@ -24,14 +24,10 @@ componentDidMount() {
     const dresses = this.state.dressesList.map(function(dresses, i) {
     return (
               <div key={i}>
-                
-
                       <div className='container' >
-
                               <div className='divsize' >
                                 <img className='imgsize' src={dresses.imageurl} alt='' />
                               </div>
-
                               <div className='overlay' >
                                   <Link to={`/details/${dresses.productid}`} >
                                     <div className='text' >
@@ -42,8 +38,7 @@ componentDidMount() {
                                     </div>
                                   </Link>
                               </div>
-
-                       </div>
+                      </div>
               </div>
               )
             })
